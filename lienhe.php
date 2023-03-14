@@ -1,145 +1,176 @@
-<?php include("view/top.php"); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
-html {
-  box-sizing: border-box;
+/* Header/logo Title */
+.header {
+  padding: 80px;
+  text-align: center;
+  background-image: url('images/hr.jpg');
+  color: Blue;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
 }
 
-.column {
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
   float: left;
-  width: 33.3%;
-  margin-bottom: 16px;
-  padding: 0 8px;
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 8px;
-}
-
-.about-section {
-  padding: 40px;
-  text-align: center;
-  background-image: url('images/ns.jpg');
-  background-repeat: no-repeat;
-  background-size:cover;
-  color: #69140E;
-}
-
-.container {
-  padding: 0 16px;
-}
-
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.title {
-  color: grey;
-}
-
-.button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
+  display: block;
   color: white;
-  background-color: #EDADC7;
   text-align: center;
-  cursor: pointer;
-  width: 40%;
-  margin-left:-5px;
-}
-
-.button:hover {
-  background-color: #D199B6;
-}
-
-@media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
-  }
-.fa-snapchat-ghost {
-  background: #fffc00;
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-.fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
-  text-align: center;
+  padding: 14px 20px;
   text-decoration: none;
-  margin: 5px 2px;
 }
 
-.fa:hover {
-    opacity: 0.7;
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
 }
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
 }
-.about-body{
-  height:800px;
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 31%; /* IE10 */
+  flex: 31%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 40%; /* IE10 */
+  flex: 40%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-image: url('images/giaithuong1.jpg');
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 50%;
+  padding: 50px;
+}
+.fakei {
+  background-image: url('images/giaithuong2.jpg');
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 50%;
+  padding: 50px;
+}
+.fakeim {
+  background-image: url('images/giaithuong3.jpg');
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 50%;
+  padding: 50px;
+}
+.fakeimge {
+  background-image: url('images/A81.jpg');
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 50%;
+  padding: 50px;
+}
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background-color: pink;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
 }
 </style>
+</head>
+<body>
 
-<div class="about-section">
-  <h1>CREAM COSMETIC</h1>
-  <p>CHUYÊN HÀNG AUTHENTIC</p>
-  <a href="index.php" class="fa fa-home" style='font-size:35px; color:#69140E; width:10%; height:10%;'></a>
+<div class="header">
+<img src="images/vtv.png" width="150px" height="150px" style="border-radius:50%;"><h1>VIETRAVEL</h1>
+  <h2><p>Nhà tổ chức du lịch chuyên nghiệp</p><h2>
 </div>
-<div class="about-body">
-  <div class="row">
-
-    <div class="column">
-      <div class="card">
-        <img src="images/khang.jpg"alt="Khang" style=" margin-left: 10%; width:350px">
-        <div class="container">
-          <h2>THÁI HOÀNG KHANG</h2>
-          <p class="title"><b>CEO & Founder</b></p>
-          <p>zalo, call: 0369208649</p>
-          <p>thaihoangkhang9572@gmail.com</p>
-          <p><button class="button" ><a href="https://www.facebook.com/hoangkhang.thai.9026" target="_blank">Contact</a></button></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <img src="images/dnghi.jpg" alt="Mike" style="  margin-left: 17%; width:295px">
-        <div class="container">
-          <h2>Trịnh Hoàng Đông Nghi</h2>
-          <p class="title"><b>Manager</b></p>
-          <p>zalo, call: 0786156754</p>
-          <p>anhgiaden910@gmail.com</p>
-          <p><button class="button" ><a href="https://www.facebook.com/hnginx/" target="_blank">Contact</a></button></p>
-        </div>
-      </div>
-    </div>
+<div class="row">
+  <div class="side">
+    <h4>VÌ SAO PHẢI CHỌN</h4>
+    <h2 Style="color: blue;">VIETRAVEL:</h2>
+    <div class="fakei" style="height:700px; weight:850px;"></div>
+    <h3>DỊCH VỤ CỦA CHÚNG TÔI</h3>
+    <h3 Style="color: red;">VIETRAVEL GIFT</h3>
+    <h4 Style="color: blue;">Thẻ du lịch thông</h4>
+    <h5>VIETRAVEL gift là sản phẩm nhằm đa dạng hóa sự lựa chọn của khách hàng</h5>
+    <h5>VIETRAVEL gift mang đến cho khách hàng hơn cả món quà vật chất. Đó là những trãi nghiệm đọc đáo, 
+        nhiều niềm vui và cảm xúc thăng hoa trong cuộc sống</h5>
+    <h5>VIETRAVEL gift có thể sử dụng để đăng kí các dịch vụ của vietravel như:</h5>
+    <div class="fakeim" style="height:700px; weight:850px;"></div>
     
-    <div class="column">
-      <div class="card">
-      <img src="images/duong.jpg" alt="Mike" style="  margin-left: 17%; width:310px">
-        <div class="container">
-          <h2>NGUYỄN PHAN HỒNG DƯƠNG</h2>
-          <p class="title"><b>Employee</b></p>
-          <p>zalo, call: 0982731502</p>
-          <p>nphduong0602@gmail.com</p>
-          <p><button class="button" ><a href="https://www.facebook.com/chomchom0601" target="_blank">Contact</a></button></p>
-        </div>
-      </div>
-    </div>
+  </div>
+  <div class="main">
+    <h2>THÀNH TÍCH ĐẠT ĐƯỢC</h2>
+    <div class="fakeimg" style="height:650px; weight:350px;"></div>
+    <p>Các giải thưởng quốc gia và quốc tế đạt được đã minh chứng cho những nổ lực không ngừng của Vietravel trong việc kiến tạo nên những giá trị mới cho khách hàng, thị trường và xã hội.
+       Đông thời đưa ngành "Công nghiệp không khói" của Việt Nam phát triển mạnh mẽ, sánh vai cùng bạn bè quốc tế.</p>
+    <br>
+    <h2>KINH NGHIỆM VÀ THÀNH TỰU</h2>
+    <h5>Là thương hiệu lữ hành uy tín, đẳng cấp khu vực, Vietravel luôn được Nhà nước, Chính phủ, 
+      các ban ngành đoàn thể lựa chọn là nhà cung cấp dịch vụ, phương tiện vận chuyển cho nhiều sự kiện mang tính quốc gia và quốc tế.
+      Ngoài ra, Vietravel còn phục vụ hơn 5.000 khách hàng doanh nghiệp với hơn 80.000 chương trình đã thực hiện,
+      mang dến cho khách hàng nhiều trải nghiệm thú vị sau mỗi chuyến đi.</h5>
+    <div class="fakeimge" style="height:650px; weight:400px;"></div>
   </div>
 </div>
 
-<?php include("view/bottom.php"); ?>
+<div class="footer">
+  <h2>VIETRAVEL - Nhà tổ chức sự kiện chuyên nghiệp</h2>
+</div>
+
+</body>
+</html>
