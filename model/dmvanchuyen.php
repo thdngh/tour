@@ -1,5 +1,5 @@
 <?php
-class DANHMUC{
+class DMVANCHUYEN{
     private $id;
     private $tendanhmuc;
 
@@ -20,10 +20,10 @@ class DANHMUC{
     }
 
     // Lấy danh sách
-    public function laydanhmuc(){
+    public function laydmvanchuyen(){
         $dbcon = DATABASE::connect();
         try{
-            $sql = "SELECT * FROM danhmuc";
+            $sql = "SELECT * FROM dmvanchuyen";
             $cmd = $dbcon->prepare($sql);
             $cmd->execute();
             $result = $cmd->fetchAll();
@@ -37,10 +37,10 @@ class DANHMUC{
     }
 
     // Thêm mới
-    public function themdanhmuc($tendm){
+    public function themdmvanchuyen($tendm){
         $dbcon = DATABASE::connect();
         try{
-            $sql = "INSERT INTO danhmuc(tendanhmuc) VALUES(:tendanhmuc)";
+            $sql = "INSERT INTO dmvanchuyen(tendanhmuc) VALUES(:tendanhmuc)";
             $cmd = $dbcon->prepare($sql);
             $cmd->bindValue(":tendanhmuc", $tendm);
             $result = $cmd->execute();            
@@ -54,10 +54,10 @@ class DANHMUC{
     }
 
     // Xóa 
-    public function xoadanhmuc($id){
+    public function xoadmvanchuyen($id){
         $dbcon = DATABASE::connect();
         try{
-            $sql = "DELETE FROM danhmuc WHERE id=:id";
+            $sql = "DELETE FROM dmvanchuyen WHERE id=:id";
             $cmd = $dbcon->prepare($sql);
             $cmd->bindValue(":id", $id);
             $result = $cmd->execute();            
@@ -71,10 +71,10 @@ class DANHMUC{
     }
 
     // Cập nhật 
-    public function suadanhmuc($id, $tendm){
+    public function suadmvanchuyen($id, $tendm){
         $dbcon = DATABASE::connect();
         try{
-            $sql = "UPDATE danhmuc SET tendanhmuc=:tendanhmuc WHERE id=:id";
+            $sql = "UPDATE dmvanchuyen SET tendanhmuc=:tendanhmuc WHERE id=:id";
             $cmd = $dbcon->prepare($sql);
             $cmd->bindValue(":tendanhmuc", $tendm);
             $cmd->bindValue(":id", $id);
@@ -89,10 +89,10 @@ class DANHMUC{
     }
 
     // Lấy danh mục theo id
-    public function laydanhmuctheoid($id){
+    public function laydmvanchyentheoid($id){
         $dbcon = DATABASE::connect();
         try{
-            $sql = "SELECT * FROM danhmuc WHERE id=:id";
+            $sql = "SELECT * FROM dmvanchuyen WHERE id=:id";
             $cmd = $dbcon->prepare($sql);
             $cmd->bindValue(":id", $id);
             $cmd->execute();

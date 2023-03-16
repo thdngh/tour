@@ -48,26 +48,26 @@
       <div class="col-sm-4"> 
       <marquee direction="down" onmouseover="stop()" onmouseout="start()" height="580px">
       <?php
-      foreach($mathang as $m):  
-        if($m["id"] != $mhct["id"]){
+      foreach($tttour as $mt):  
+        if($mt["id"] != $mhct["id"]){
       ?>
       <div>
         <div class="panel panel-info text-center">
           <div class="panel-heading">
-          <a href="?action=xemchitiet&mahang=<?php echo $m["id"]; ?>">
-            <?php echo $m["tentour"]; ?>
+          <a href="?action=xemchitiet&mahang=<?php echo $mt["id"]; ?>">
+            <?php echo $mt["tentour"]; ?>
           </a>
           </div>
           <div class="panel-body">      
-            <a href="?action=xemchitiet&mahang=<?php echo $m["id"]; ?>">
-            <img src="<?php echo $m["hinhanh"]; ?>" class="img-responsive" style="width:100%"></a>
+            <a href="?action=xemchitiet&mahang=<?php echo $mt["id"]; ?>">
+            <img src="<?php echo $mt["hinhanh"]; ?>" class="img-responsive" style="width:100%"></a>
             <div>Giá: <span  class="text-danger">
-            <?php echo number_format($m["gia"]); ?>đ</span>  
+            <?php echo number_format($mt["gia"]); ?>đ</span>  
             </div>
           </div> 
           <div class="panel-footer">
-          <a class="btn btn-success" href="?action=xemchitiet&mahang=<?php echo $m["id"]; ?>"><i class="fa fa-bars"></i>Chi tiết</a> 
-          <a class="btn btn-danger" href="?action=chovaogio&txtmahang=<?php echo $m["id"]; ?> &txtsoluong=1"><i class="fa fa-shopping-basket"></i>Chọn mua</a>  
+          <a class="btn btn-success" href="?action=xemchitiet&mahang=<?php echo $mt["id"]; ?>"><i class="fa fa-bars"></i>Chi tiết</a> 
+          <a class="btn btn-danger" href="?action=chovaogio&txtmahang=<?php echo $mt["id"]; ?> &txtsoluong=1"><i class="fa fa-shopping-basket"></i>Chọn mua</a>  
           </div>  
         </div>
         </div>

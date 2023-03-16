@@ -1,8 +1,8 @@
 <?php 
 require_once("model/database.php");
 require_once("model/danhmuc.php");
-require_once("model/mathang.php");
-require_once("model/giohang.php");
+require_once("model/tttour.php");
+require_once("model/tour.php");
 
 
 $dm = new DANHMUC();
@@ -106,9 +106,9 @@ $danhmuc = $dm->laydanhmuc(); ?>
           
           <ul class="dropdown-menu">
             <?php            
-            foreach($danhmuc as $dm):
+            foreach($dmvancghuyen as $dmvc):
             ?>
-            <li><a href="?action=xemnhom&madm=<?php echo $dm["id"]; ?>"><?php echo $dm["tendanhmuc"]; ?></a></li>
+            <li><a href="?action=xemnhom&madm=<?php echo $dmvc["id"]; ?>"><?php echo $dmvc["tendanhmuc"]; ?></a></li>
             <?php endforeach; ?>
           </ul>
         </li>
@@ -167,7 +167,7 @@ $danhmuc = $dm->laydanhmuc(); ?>
             <datalist id="browsers">
               <option value=""></option>
               <?php 
-              require_once("model/mathang.php"); 
+              require_once("model/tttour.php"); 
               $mhs = new TTTOUR();
               $tttours = $mhs->laytttour();
               foreach($tttours as $rows):

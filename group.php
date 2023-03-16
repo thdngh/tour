@@ -1,80 +1,53 @@
 <?php include("view/carousel.php"); ?>
 <?php include("view/top.php"); ?>
 <style>
-  .panel{
-	height:420px;
+  .img:hover {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
 }
 
-.panel.panel-gr{
-	border:none;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
-.panel-gr>.panel-heading {
-    background-color: none;
-	height:70px;
-	padding-top:15px;
-}
-.panel-gr>.panel-body {
-	height:293px;
-}
-
-.panel-gr>.panel-footer{
-	background-color:transparent;
-	border:none;
-	padding:5px;
-}
-
-.btn-d{
-	font-weight:bold;
-	background-color:#31493C;
-	color:white;	
-}
-.btn-m{
-	font-weight:bold;
-	background-color:#690500;
-	color:white;	
-}
-.btn-d:hover,.btn-m:hover{
-	font-weight:bold;
-	background-color:#f5e2c8;
-	color:#17255a;	
-}
-.btn-sm {
-	height:25px;
-	margin-top:-8px;
-	margin-right:5px;
-}
-
-.btn-sm span{
-	padding-bottom:5px;
-}
-
 </style>
-<br>
+<br><br>
 <div class="container">    
 <div class="row">
-
-<h3 align="center">Các tour <?php echo $tendm; ?></h3>
+<h3>Các sản phẩm <?php echo $tendm; ?></h3>
 <?php
-if($mathang != null){
-foreach($mathang as $mh):  
-?><br>
+if($tttour != null){
+foreach($tttour as $mt):  
+?>
 <div class="col-sm-3">
-  <div class="panel panel-gr text-center" >
-    <div class="panel-heading"><a href="?action=xemchitiet&mahang=<?php echo $mh["id"]; ?>" style="color:#17255a; font-weight:bold;">
-    	<?php echo $mh["tentour"]; ?></a></div>
+  <div class="panel panel-info text-center">
+    <div class="panel-heading"><a href="?action=xemchitiet&mahang=<?php echo $mt["id"]; ?>">
+    	<?php echo $mt["tentour"]; ?></a></div>
     <div class="panel-body">    	
-    	<a href="?action=xemchitiet&mahang=<?php echo $mh["id"]; ?>">
-    	<img src="<?php echo $mh["hinhanh"]; ?>" class="img-responsive" style="width:100%" alt="<?php echo $mh["tentour"]; ?>"></a>
-    	<div style="font-weight:bold;padding-top:5px;">Giá bán: <span  class="text-danger"><?php echo number_format($mh["gia"]); ?>đ</span>  </div>
+    	<a href="?action=xemchitiet&mahang=<?php echo $mt["id"]; ?>">
+    	<img src="<?php echo $mt["hinhanh"]; ?>" class="img" style="width:100%" alt="<?php echo $mt["tentour"]; ?>"></a>
+    	<div>Giá: <span  class="text-danger"><?php echo number_format($mt["gia"]); ?>đ</span>  </div>
     </div> 
 	<div class="panel-footer">
-        <a class="btn btn-d" href="?action=xemchitiet&mahang=<?php echo $mh["id"]; ?>" style="font-weight:bold; border-radius:50px;">Chi tiết</a> 
-        <a class="btn btn-m" href="?action=chovaogio&id=<?php echo $mh["id"]; ?>&soluong=1"  style="font-weight:bold; border-radius:50px;">Chọn mua</a>  
+        <a class="btn btn-success" href="?action=xemchitiet&mahang=<?php echo $mt["id"]; ?>"><i class="fa fa-bars"></i>Chi tiết</a> 
+      <a class="btn btn-danger" href="?action=dattour&id=<?php echo $mt["id"]; ?>"><i class="fa fa-shopping-basket"></i>Chọn mua</a>  
     </div>  
      
   </div>
 </div>
+</divsss>
 <?php 
 endforeach; 
 }
@@ -82,11 +55,7 @@ else{
     echo "<p>Vui lòng xem danh mục khác...</p>";
 }
 ?>
-
-
 </div>
-
 <?php include("topview.php"); ?>
 </div>
-<?php include("view/carousel.php"); ?>
 <?php include("view/bottom.php"); ?>

@@ -11,9 +11,16 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox" style="width: 100%">
       <div class="item active">
-        <img src="images/carousel/111.jpg" alt="CREAM COSMETIC">
+        <img src="images/carousel/tour1.jpg" alt="CREAM COSMETIC">
         <div class="carousel-caption">
-          <h3>Sản phẩm chất lượng giá thành hợp lí</h3>
+          <h3></h3>
+        </div>      
+      </div>
+
+      <div class="item">
+        <img src="images/carousel/tour2.jpg" alt="CREAM COSMETIC">
+        <div class="carousel-caption">
+          <h3>Cam kết chính hãnh 100%</h3>
         </div>      
       </div>
 
@@ -24,13 +31,14 @@
         </div>      
       </div>
 
+
       <div class="item">
         <img src="images/carousel/113.jpg" alt="CREAM COSMETIC">
         <div class="carousel-caption">
           <h3>Chăm sóc - Nhiệt tình - Tận tâm </h3>
-        </div>      
+        </div>  
+            
       </div>
-    
     </div>
 
     <!-- Left and right controls -->

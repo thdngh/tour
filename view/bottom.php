@@ -86,12 +86,12 @@ body {margin:0;height:500px;}
 
 </style>
 <footer class="text-center" style="background-color:#4169E1;">
-  <a class="up-arrow" href="#abc" data-toggle="tooltip" title="Lên trên" style="color:white">
+  <a class="up-arrow" href="#abc" data-toggle="tooltip" title="Lên trên">
     <span class="glyphicon glyphicon-chevron-up"></span>
-  </a>
+  </a><br><br>
   <h1><a href="index.php" style="color: white;"><b>VIETRAVEL</b></a><h1>
   <h3><p>Nhà tổ chức du lịch chuyên nghiệp</h3>
-  <p style="margin-bottom:0px;">Số 01 Lý Tự Trọng, P. Mỹ Long, TP. Long Xuyên, An Giang</p>  
+  <p>Số 01 Lý Tự Trọng, P. Mỹ Long, TP. Long Xuyên, An Giang</p>  
   <div class="row">
   <div class="column" style="background-color:#4169E1;">
     <h3 id="dt4"><img src="images/vtv.png" width="33px" height="33x" style="border-radius:50%;"></i>VIETRAVEL</h3>

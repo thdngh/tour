@@ -25,24 +25,24 @@
     <!-- Hàng nổi bật -->    
     <h3>Sản phẩm nổi bật</h3>
     <?php
-    foreach($mathangnoibat as $m):
+    foreach($tttournoibat as $mt):
     ?>
     <div class="col-sm-3">
       <div class="panel panel-danger text-center">
         <div class="panel-heading">
           <strong>
-          <a class="panel-title"  href="?action=xemnhom&madm=<?php echo $m["danhmuc_id"]; ?>">
-          <?php echo $m["tendanhmuc"]; ?>
+          <a class="panel-title"  href="?action=xemnhom&madm=<?php echo $mt["danhmuc_id"]; ?>">
+          <?php echo $mt["tendanhmuc"]; ?>
           </strong>
           </a>  
         </div>
         <div class="panel-body">
-          <a href="?action=xemchitiet&mahang=<?php echo $m["id"]; ?>"><img src="<?php echo $m["hinhanh"]; ?>" class="img" style="width:100%" alt="<?php echo $m["tentour"]; ?>"></a>
-          <a href="?action=xemchitiet&mahang=<?php echo $m["id"]; ?>"><?php echo $m["tentour"]; ?></a>
+          <a href="?action=xemchitiet&mahang=<?php echo $mt["id"]; ?>"><img src="<?php echo $mt["hinhanh"]; ?>" class="img" style="width:100%" alt="<?php echo $mt["tentour"]; ?>"></a>
+          <a href="?action=xemchitiet&mahang=<?php echo $mt["id"]; ?>"><?php echo $mt["tentour"]; ?></a>
         </div>
         <div class="panel-footer">
-          <a class="btn btn-success" href="?action=xemchitiet&mahang=<?php echo $m["id"]; ?>"><i class="fa fa-bars"></i>Chi tiết</a>
-          <a class="btn btn-danger" href="?action=chovaogio&id=<?php echo $m["id"]; ?>&soluong=1"><i class="fa fa-shopping-basket"></i>Chọn mua</a>
+          <a class="btn btn-success" href="?action=xemchitiet&mahang=<?php echo $mt["id"]; ?>"><i class="fa fa-bars"></i>Chi tiết</a>
+          <a class="btn btn-danger" href="?action=chovaogio&id=<?php echo $mt["id"]; ?>&soluong=1"><i class="fa fa-shopping-basket"></i>Chọn mua</a>
         </div>
       </div>
     </div> 

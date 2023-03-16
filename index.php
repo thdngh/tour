@@ -1,15 +1,18 @@
 <?php 
 require("model/database.php");
 require("model/danhmuc.php");
-require("model/mathang.php");
-require("model/giohang.php");
+require("model/dmvanchuyen.php");
+require("model/tttour.php");
+require("model/tour.php");
 require("model/khachhang.php");
 require("model/diachi.php");
-require("model/donhang.php");
+require("model/dattour.php");
 require("model/donhangct.php");
 
 $dm = new DANHMUC();
-$mh = new TTTOUR();
+$dmvn = new DMVANCHUYEN();
+$mt = new TTTOUR();
+$dt = new DATTOUR();
 $kh = new KHACHHANG();
 $danhmuc = $dm->laydanhmuc();
 $soluong=1;
@@ -19,15 +22,15 @@ if(isset($_REQUEST["action"])){
 else{
     $action="macdinh"; 
 }
-$mathangnoibat = $mh->laymathangnoibat();
+$tttournoibat = $mt->laytournoibat();
 
 switch($action){
     case "macdinh": 
         
         // xử lý phân trang
-        $tongmh = $mh->demtongsomathang();   // tổng số mặt hàng
+        $tongmt = $mt->demtongsotour();   // tổng số mặt hàng
         $soluong = 8;                           // số lượng mh hiển thị trên trang 
-        $tongsotrang = ceil($tongmh/$soluong);  // tổng số trang
+        $tongsotrang = ceil($tongmt/$soluong);  // tổng số trang
         if(!isset($_REQUEST["trang"]))          // trang hiện hành: mặc định là trang đầu
             $tranghh = 1;   
         else                                    // hoặc hiển thị trang do người dùng chọn
@@ -37,7 +40,7 @@ switch($action){
         else if($tranghh < 1)
             $tranghh = 1;
         $batdau = ($tranghh-1)*$soluong;          // mặt hàng bắt đầu sẽ lấy
-        $mathang = $mh->laymathangphantrang($batdau, $soluong);
+        $tttour = $mt->laytourphantrang($batdau, $soluong);
         include("main.php");
         break;
     case "xemnhom": 
@@ -45,7 +48,7 @@ switch($action){
             $madm = $_REQUEST["madm"];
             $dmuc = $dm->laydanhmuctheoid($madm);
             $tendm =  $dmuc["tendanhmuc"];   
-            $mathang = $mh->laymathangtheodanhmuc($madm);
+            $tttour = $mt->laymathangtheodanhmuc($madm);
             include("group.php");
         }
         else{
@@ -56,40 +59,38 @@ switch($action){
         if(isset($_GET["mahang"])){
             $mahang = $_GET["mahang"];
             // tăng lượt xem lên 1
-            $mh->tangluotxem($mahang);
+            $mt->tangluotxem($mahang);
             // lấy thông tin chi tiết mặt hàng
-            $mhct = $mh->laymathangtheoid($mahang);
+            $mhct = $mt->laytourtheoid($mahang);
             // lấy các mặt hàng cùng danh mục
             $madm = $mhct["danhmuc_id"];
-            $mathang = $mh->laymathangtheodanhmuc($madm);
+            $tttour = $mt->laytourtheodanhmuc($madm);
             include("detail.php");
         }
         break;
-    case "chovaogio":
-        if(isset($_REQUEST["id"]))
-            $mahang = $_REQUEST["id"];
-        if(isset($_REQUEST["soluong"]))
-            $soluong = $_REQUEST["soluong"];
-        if(isset($_SESSION['giohang'][$mahang])){ // nếu đã có trong giỏ thi tăng số lượng
-            $soluong += $_SESSION['giohang'][$mahang];
-            $_SESSION['giohang'][$mahang] = $soluong;
-        }
-        else{       // nếu chưa thì thêm vào giỏ
-            themhangvaogio($mahang, $soluong);
-        }
-        
-        $giohang = laygiohang();
-        include("cart.php");
+    case "dattour":
+        if(isset($_REQUEST["id_nguoidung"]))
+            $tttour = $_REQUEST["id_nguoidung"];
+        if(isset($_REQUEST["diachi_id"]))
+            $tttour = $_REQUEST["diachi_id"];
+        if(isset($_REQUEST["ngay"]))
+            $tttour = $_REQUEST["ngay"];
+        if(isset($_REQUEST["tongtien"]))
+            $tttour = $_REQUEST["tongtien"];
+        if(isset($_REQUEST["ghichu"]))
+            $tttour = $_REQUEST["ghichu"];
+        include("tour.php");
         break;
+
     case "xemgiohang":
         $giohang = laygiohang();
         include("cart.php");
         break;
     case "capnhatgiohang":
-        if(isset($_REQUEST["mh"])){
-            $mh = $_REQUEST["mh"];
+        if(isset($_REQUEST["mt"])){
+            $mh = $_REQUEST["mt"];
         
-            foreach($mh as $mahang => $soluong){
+            foreach($mt as $mahang => $soluong){
                 if($soluong > 0)
                     capnhatsoluong($mahang, $soluong);
                 else
