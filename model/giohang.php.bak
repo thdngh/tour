@@ -32,7 +32,7 @@ function laygiohang() {
 	$tt_db = new TOUR();
 	
 	//Duyệt mảng SESSION giohang và lấy từng id sản phẩm cùng số lượng
-	        $mh= $mh_db->laytourtheoid($_SESSION['giohang']['matour']);
+	        $tt= $tt_db->laytourtheoid($_SESSION['giohang']['matour']);
 
 	return $tt;
 }

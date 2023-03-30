@@ -19,6 +19,10 @@
 <div class="form-group">
 	<label>Hình ảnh</label>
 	<input class="form-control" type="file" name="filehinhanh">
+	<label>Hình ảnh 2</label>
+	<input class="form-control" type="file" name="filehinhanh2">
+	<label>Hình ảnh 3</label>
+	<input class="form-control" type="file" name="filehinhanh3">
 </div>
 <div class="form-group">
 	<label>Tên tour</label>

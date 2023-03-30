@@ -164,17 +164,19 @@ public function laytourphantrang($m, $n){
     }
 	
 	// Thêm mới
-    public function themtour($tentour,$lichtrinh,$gia,$danhmuc_id,$hinhanh){
+    public function themtour($tentour,$lichtrinh,$gia,$danhmuc_id,$hinhanh,$hinhanh2,$hinhanh3){
         $dbcon = DATABASE::connect();
         try{
-            $sql = "INSERT INTO tour(tentour,lichtrinh,gia,danhmuc_id,hinhanh,luotxem,luotdat) 
-				VALUES(:tentour,:lichtrinh,:gia,:danhmuc_id,:hinhanh,0,0)";
+            $sql = "INSERT INTO tour(tentour,lichtrinh,gia,danhmuc_id,hinhanh,hinhanh2,hinhanh3,luotxem,luotdat) 
+				VALUES(:tentour,:lichtrinh,:gia,:danhmuc_id,:hinhanh,:hinhanh2,:hinhanh3,0,0)";
             $cmd = $dbcon->prepare($sql);
             $cmd->bindValue(":tentour", $tentour);
 			$cmd->bindValue(":lichtrinh", $lichtrinh);
 			$cmd->bindValue(":gia", $gia);
 			$cmd->bindValue(":danhmuc_id", $danhmuc_id);
 			$cmd->bindValue(":hinhanh", $hinhanh);
+			$cmd->bindValue(":hinhanh2", $hinhanh2);
+			$cmd->bindValue(":hinhanh3", $hinhanh3);
             $result = $cmd->execute();            
             return $result;
         }
@@ -235,23 +237,27 @@ public function laytourphantrang($m, $n){
         }
     }
     // Cập nhật 
-    public function suatour($id, $tentour,$mota,$gia,$danhmuc_id,$hinhanh,$luotxem,$luotdat){
+    public function suatour($id, $tentour,$lichtrinh,$gia,$danhmuc_id,$hinhanh,$hinhanh2,$hinhanh3,$luotxem,$luotdat){
         $dbcon = DATABASE::connect();
         try{
             $sql = "UPDATE tour SET tentour=:tentour,
-										mota=:mota,
+										lichtrinh=:lichtrinh,
 										gia=:gia,
 										danhmuc_id=:danhmuc_id,
 										hinhanh=:hinhanh,
+										hinhanh2=:hinhanh2,
+										hinhanh3=:hinhanh3,
 										luotxem=:luotxem,
 										luotdat=:luotdat
 										WHERE id=:id";
             $cmd = $dbcon->prepare($sql);
             $cmd->bindValue(":tentour", $tentour);
-			$cmd->bindValue(":mota", $mota);
+			$cmd->bindValue(":lichtrinh", $lichtrinh);
 			$cmd->bindValue(":gia", $gia);
 			$cmd->bindValue(":danhmuc_id", $danhmuc_id);
 			$cmd->bindValue(":hinhanh", $hinhanh);
+			$cmd->bindValue(":hinhanh2", $hinhanh2);
+			$cmd->bindValue(":hinhanh3", $hinhanh3);
 			$cmd->bindValue(":luotxem", $luotxem);
 			$cmd->bindValue(":luotdat", $luotdat);
             $cmd->bindValue(":id", $id);

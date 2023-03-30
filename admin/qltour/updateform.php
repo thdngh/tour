@@ -14,15 +14,15 @@
 </div>
 <div class="form-group">    
 	<label>Tên tour</label>    
-	<input class="form-control" type="text" name="txttenhang" required value="<?php echo $t["tentour"]; ?>">
+	<input class="form-control" type="text" name="txttentour" required value="<?php echo $t["tentour"]; ?>">
 </div> 
 <div class="form-group">    
-	<label>lịch trình</label>    
-	<textarea class="form-control" name="txtmota" required><?php echo $t["lichtrinh"]; ?></textarea>
+	<label>Lịch trình</label>    
+	<textarea class="form-control" name="txtlichtrinh" required><?php echo $t["lichtrinh"]; ?></textarea>
 </div> 
 <div class="form-group">    
 	<label>Giá</label>    
-	<input class="form-control" type="number" name="txtgiagoc" value="<?php echo $t["gia"]; ?>" required>
+	<input class="form-control" type="number" name="txtgia" value="<?php echo $t["gia"]; ?>" required>
 </div> 
 
 <div class="form-group">    
@@ -31,7 +31,7 @@
 </div> 
 <div class="form-group">    
 	<label>Lượt đặt</label>    
-	<input class="form-control" type="number" name="txtluotmua" value="<?php echo $t["luotdat"]; ?>" required>
+	<input class="form-control" type="number" name="txtluotdat" value="<?php echo $t["luotdat"]; ?>" required>
 </div> 
 <div class="row"> 
 	<div id="hinh" class="col-sm-3">
@@ -40,23 +40,35 @@
 		<img src="../../<?php echo $t["hinhanh"]; ?>" width="50"><br>
 		<input type="checkbox" id="chkdoianh" name="chkdoianh" value="1"> Đổi ảnh<br>
 	</div>  
-	<div id="hinh" class="col-sm-3">
+	
+	<div id="hinh2" class="col-sm-3">
 		<label>Hình ảnh 2</label><br>
-		<input type="hidden" name="txthinhcu" value="<?php echo $t["hinhanh"]; ?>">
+		<input type="hidden" name="txthinhcu2" value="<?php echo $t["hinhanh2"]; ?>">
 		<img src="../../<?php echo $t["hinhanh2"]; ?>" width="50"><br>
-		<input type="checkbox" id="chkdoianh" name="chkdoianh" value="1"> Đổi ảnh<br>
+		<input type="checkbox" id="chkdoianh2" name="chkdoianh" value="1"> Đổi ảnh<br>
 	</div>  
-	<div id="hinh" class="col-sm-3">
+	
+	<div id="hinh3" class="col-sm-3">
 		<label>Hình ảnh 3</label><br>
-		<input type="hidden" name="txthinhcu" value="<?php echo $t["hinhanh"]; ?>">
+		<input type="hidden" name="txthinhcu3" value="<?php echo $t["hinhanh3"]; ?>">
 		<img src="../../<?php echo $t["hinhanh3"]; ?>" width="50"><br>
-		<input type="checkbox" id="chkdoianh" name="chkdoianh" value="1"> Đổi ảnh<br>
+		<input type="checkbox" id="chkdoianh3" name="chkdoianh" value="1"> Đổi ảnh<br>
 	</div>  
 </div>  
-<div id="file" class="form-group">  
+<div id="file" class="form-group">
 	<input type="file" class="form-control" name="filehinhanh">
 </div>
+
+<div id="file2" class="form-group">
+	<input type="file" class="form-control" name="filehinhanh2">
+</div>
+
+<div id="file3" class="form-group">
+	<input type="file" class="form-control" name="filehinhanh3">
+</div>
+
 <br>
+
 <div class="form-group">
 	<input class="btn btn-primary"  type="submit" value="Lưu">
 	<input class="btn btn-warning"  type="reset" value="Hủy">
@@ -70,6 +82,17 @@ $(document).ready(function(){
     $("#chkdoianh").click(function(){        
         $("#file").toggle(500);
     });
+	
+	$("#file2").hide();
+    $("#chkdoianh2").click(function(){        
+        $("#file2").toggle(500);
+    });
+	
+	$("#file3").hide();
+    $("#chkdoianh3").click(function(){        
+        $("#file3").toggle(500);
+    });
+	
 });
 </script>
 

@@ -58,7 +58,7 @@ function tinhtiengiohang () {
     $tong = 0;
     $giohang = laygiohang();
     foreach ($giohang as $tt) {
-        $tong += $tt['gia'] * $tt['soluong'];
+        $tong += $tt['gia'] * $tt['songuoi'];
     }
     return $tong;
 }

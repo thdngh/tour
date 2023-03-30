@@ -9,7 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
   *{
-	  font-family:"cốnlas";
+	  font-family:"consolas";
   }
 .row.content {
 	height: 1000px;
@@ -53,7 +53,8 @@
   <div class="row content">
     <!-- Menu mh lớn -->     
     <div class="col-sm-3 sidenav hidden-xs" >
-      <h3>          
+      <h3 align="center">          
+		<a class="blogo" href="../../index.php" target="_blank" style=""><img src='../../images/vtv.png' width="10%"></a>
         <span class="label label-info">a</span>
         <span class="label label-warning">d</span>
         <span class="label label-danger">m</span>
@@ -65,7 +66,7 @@
         <li class="active"><a href="../ktnguoidung/index.php"><span class="glyphicon glyphicon-cog"></span> Bảng điều khiển</a></li>
         <li><a href="../qldanhmuc/index.php"><span class="glyphicon glyphicon-list-alt"></span> Quản lý danh mục</a></li>
         <li><a href="../qltour/index.php"><span class="glyphicon glyphicon-gift"></span> Quản lý tour</a></li>
-        <li><a href="../qldonhang/index.php"><span class="glyphicon glyphicon-list-alt"></span> Quản lý đơn hàng</a></li>
+        <li><a href="../qldon/index.php"><span class="glyphicon glyphicon-list-alt"></span> Quản lý đơn</a></li>
         <?php
         if(isset($_SESSION["nguoidung"]) && $_SESSION["nguoidung"]["loai"]==1){
         ?>

@@ -10,7 +10,7 @@
 	<?php
 	foreach($danhmuc as $dm):
 	?>
-		<option value="<?php echo $d["id"]; ?>"><?php echo $d["tendanhmuc"]; ?></option>
+		<option value="<?php echo $dm["id"]; ?>"><?php echo $dm["tendanhmuc"]; ?></option>
 	<?php
 	endforeach;
 	?>
@@ -18,6 +18,10 @@
 </div>
 <div class="form-group">
 	<label>Hình ảnh</label>
+	<input class="form-control" type="file" name="filehinhanh">
+	<label>Hình ảnh 2</label>
+	<input class="form-control" type="file" name="filehinhanh">
+	<label>Hình ảnh 3</label>
 	<input class="form-control" type="file" name="filehinhanh">
 </div>
 <div class="form-group">
