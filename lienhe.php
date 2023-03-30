@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Page Title</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<?php include("view/top.php"); ?>
+
 <style>
 * {
   box-sizing: border-box;
-}
-
-/* Style the body */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
 }
 
 /* Header/logo Title */
@@ -28,32 +18,6 @@ body {
   font-size: 40px;
 }
 
-/* Style the top navigation bar */
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-}
-
-/* Style the navigation bar links */
-.navbar a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-}
-
-/* Right-aligned link */
-.navbar a.right {
-  float: right;
-}
-
-/* Change color on hover */
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
 
 /* Column container */
 .row {  
@@ -131,46 +95,41 @@ body {
   }
 }
 </style>
-</head>
-<body>
-
-<div class="header">
-<img src="images/vtv.png" width="150px" height="150px" style="border-radius:50%;"><h1>VIETRAVEL</h1>
-  <h2><p>Nhà tổ chức du lịch chuyên nghiệp</p><h2>
-</div>
-<div class="row">
-  <div class="side">
-    <h4>VÌ SAO PHẢI CHỌN</h4>
-    <h2 Style="color: blue;">VIETRAVEL:</h2>
-    <div class="fakei" style="height:700px; weight:850px;"></div>
-    <h3>DỊCH VỤ CỦA CHÚNG TÔI</h3>
-    <h3 Style="color: red;">VIETRAVEL GIFT</h3>
-    <h4 Style="color: blue;">Thẻ du lịch thông</h4>
-    <h5>VIETRAVEL gift là sản phẩm nhằm đa dạng hóa sự lựa chọn của khách hàng</h5>
-    <h5>VIETRAVEL gift mang đến cho khách hàng hơn cả món quà vật chất. Đó là những trãi nghiệm đọc đáo, 
-        nhiều niềm vui và cảm xúc thăng hoa trong cuộc sống</h5>
-    <h5>VIETRAVEL gift có thể sử dụng để đăng kí các dịch vụ của vietravel như:</h5>
-    <div class="fakeim" style="height:700px; weight:850px;"></div>
-    
-  </div>
-  <div class="main">
-    <h2>THÀNH TÍCH ĐẠT ĐƯỢC</h2>
-    <div class="fakeimg" style="height:650px; weight:350px;"></div>
-    <p>Các giải thưởng quốc gia và quốc tế đạt được đã minh chứng cho những nổ lực không ngừng của Vietravel trong việc kiến tạo nên những giá trị mới cho khách hàng, thị trường và xã hội.
-       Đông thời đưa ngành "Công nghiệp không khói" của Việt Nam phát triển mạnh mẽ, sánh vai cùng bạn bè quốc tế.</p>
-    <br>
-    <h2>KINH NGHIỆM VÀ THÀNH TỰU</h2>
-    <h5>Là thương hiệu lữ hành uy tín, đẳng cấp khu vực, Vietravel luôn được Nhà nước, Chính phủ, 
-      các ban ngành đoàn thể lựa chọn là nhà cung cấp dịch vụ, phương tiện vận chuyển cho nhiều sự kiện mang tính quốc gia và quốc tế.
-      Ngoài ra, Vietravel còn phục vụ hơn 5.000 khách hàng doanh nghiệp với hơn 80.000 chương trình đã thực hiện,
-      mang dến cho khách hàng nhiều trải nghiệm thú vị sau mỗi chuyến đi.</h5>
-    <div class="fakeimge" style="height:650px; weight:400px;"></div>
-  </div>
-</div>
-
-<div class="footer">
-  <h2>VIETRAVEL - Nhà tổ chức sự kiện chuyên nghiệp</h2>
+<div class="container">
+	<div class="header">
+	<img src="images/vtv.png" width="150px" height="150px" style="border-radius:50%;"><h1>VIETRAVEL</h1>
+	  <h2><p>Nhà tổ chức du lịch chuyên nghiệp</p><h2>
+	</div>
+	<div class="row">
+	  <div class="side">
+		<h4>VÌ SAO PHẢI CHỌN</h4>
+		<h2 Style="color: blue;">VIETRAVEL:</h2>
+		<div class="fakei" style="height:700px; weight:850px;"></div>
+		<h3>DỊCH VỤ CỦA CHÚNG TÔI</h3>
+		<h3 Style="color: red;">VIETRAVEL GIFT</h3>
+		<h4 Style="color: blue;">Thẻ du lịch thông</h4>
+		<h5>VIETRAVEL gift là sản phẩm nhằm đa dạng hóa sự lựa chọn của khách hàng</h5>
+		<h5>VIETRAVEL gift mang đến cho khách hàng hơn cả món quà vật chất. Đó là những trãi nghiệm đọc đáo, 
+			nhiều niềm vui và cảm xúc thăng hoa trong cuộc sống</h5>
+		<h5>VIETRAVEL gift có thể sử dụng để đăng kí các dịch vụ của vietravel như:</h5>
+		<div class="fakeim" style="height:700px; weight:850px;"></div>
+		
+	  </div>
+	  <div class="main">
+		<h2>THÀNH TÍCH ĐẠT ĐƯỢC</h2>
+		<div class="fakeimg" style="height:650px; weight:350px;"></div>
+		<p>Các giải thưởng quốc gia và quốc tế đạt được đã minh chứng cho những nổ lực không ngừng của Vietravel trong việc kiến tạo nên những giá trị mới cho khách hàng, thị trường và xã hội.
+		   Đông thời đưa ngành "Công nghiệp không khói" của Việt Nam phát triển mạnh mẽ, sánh vai cùng bạn bè quốc tế.</p>
+		<br>
+		<h2>KINH NGHIỆM VÀ THÀNH TỰU</h2>
+		<h5>Là thương hiệu lữ hành uy tín, đẳng cấp khu vực, Vietravel luôn được Nhà nước, Chính phủ, 
+		  các ban ngành đoàn thể lựa chọn là nhà cung cấp dịch vụ, phương tiện vận chuyển cho nhiều sự kiện mang tính quốc gia và quốc tế.
+		  Ngoài ra, Vietravel còn phục vụ hơn 5.000 khách hàng doanh nghiệp với hơn 80.000 chương trình đã thực hiện,
+		  mang dến cho khách hàng nhiều trải nghiệm thú vị sau mỗi chuyến đi.</h5>
+		<div class="fakeimge" style="height:650px; weight:400px;"></div>
+	  </div>
+	</div>
 </div>
 
-</body>
-</html>
+
+<?php include("view/bottom.php"); ?>

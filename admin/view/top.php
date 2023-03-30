@@ -8,9 +8,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
-    .row.content {height: 1000px}
-    .sidenav {background-color: #f1f1f1; height: 100%;}
-    @media screen and (max-width: 767px) { .row.content {height: auto;} }
+  *{
+	  font-family:"consolas";
+  }
+.row.content {
+	height: 1000px;
+}
+.sidenav {
+	background-color: #E3F2FD; 
+	height: 100%;
+}
+@media screen and (max-width: 767px) { .row.content {height: auto;} }
   </style>
 </head>
 <body>
@@ -23,13 +31,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">VIETTRAVEL</a>
+      <a class="navbar-brand" href="#">VIETRAVEL</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar" style="backgeround-color:pink;">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Bảng điều khiển</a></li>
         <li><a href="../qldanhmuc/index.php">Quản lý danh mục</a></li>
-        <li><a href="../qlmathang/index.php">Quản lý mặt hàng</a></li>
+        <li><a href="../qltour/index.php">Quản lý tour</a></li>
         <?php
         if(isset($_SESSION["nguoidung"]) && $_SESSION["nguoidung"]["loai"]==1){
         ?>
@@ -44,19 +52,19 @@
 <div class="container-fluid">
   <div class="row content">
     <!-- Menu mh lớn -->     
-    <div class="col-sm-3 sidenav hidden-xs" style="background-color: #386641;">
+    <div class="col-sm-3 sidenav hidden-xs" >
       <h3>          
-        <span class="label label-info">C</span>
-        <span class="label label-warning">R</span>
-        <span class="label label-danger">E</span>
-        <span class="label label-danger">A</span>
-        <span class="label label-danger">M</span>
-        COSMETIC
+        <span class="label label-info">a</span>
+        <span class="label label-warning">d</span>
+        <span class="label label-danger">m</span>
+        <span class="label label-success">i</span>
+        <span class="label label-primary">n</span>
+        
       </h3><br>
       <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="#"><span class="glyphicon glyphicon-cog"></span> Bảng điều khiển</a></li>
+        <li class="active"><a href="../ktnguoidung/index.php"><span class="glyphicon glyphicon-cog"></span> Bảng điều khiển</a></li>
         <li><a href="../qldanhmuc/index.php"><span class="glyphicon glyphicon-list-alt"></span> Quản lý danh mục</a></li>
-        <li><a href="../qlmathang/index.php"><span class="glyphicon glyphicon-gift"></span> Quản lý mặt hàng</a></li>
+        <li><a href="../qltour/index.php"><span class="glyphicon glyphicon-gift"></span> Quản lý tour</a></li>
         <li><a href="../qldonhang/index.php"><span class="glyphicon glyphicon-list-alt"></span> Quản lý đơn hàng</a></li>
         <?php
         if(isset($_SESSION["nguoidung"]) && $_SESSION["nguoidung"]["loai"]==1){
@@ -69,7 +77,7 @@
     <!-- Menu mh lớn - kết thúc -->
     <br>
     
-    <div class="col-sm-9" style="background-color:">
+    <div class="col-sm-9" ">
       <div class="container-fluid">  
         <!-- Thông tin người dùng - sẽ bổ sung ở bài thực hành sau -->          
         <div class="dropdown" style="text-align: right;">
@@ -83,7 +91,7 @@
             <li><a href="#" data-toggle="modal" data-target="#fcapnhatthongtin"><span class="glyphicon glyphicon-edit"></span> Hồ sơ cá nhân</a></li>
             <li><a href="#" data-toggle="modal" data-target="#fdoimatkhau"><span class="glyphicon glyphicon-wrench"></span> Đổi mật khẩu</a></li>
             <li class="divider"></li>
-            <li><a href="../../index.php?action=dangxuat"><span class="glyphicon glyphicon-log-out"></span>Thoát</a></li>
+              <li><a href="../ktnguoidung/index.php?action=dangxuat"><span class="glyphicon glyphicon-log-out"></span> Thoát</a></li>
           </ul>  
           
         </div>

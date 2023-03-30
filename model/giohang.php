@@ -5,53 +5,40 @@ if (!isset($_SESSION['giohang']) ) {
 }
 
 // Hàm thêm sản phẩm vào giỏ
-function themhangvaogio($mahang, $soluong) {    
+function themtourvaogio($matour, $soluong) {    
     //Cập nhập Số lượng vào SESSION - Làm tròn
-    $_SESSION['giohang'][$mahang] = round($soluong, 0);    
+    $_SESSION['giohang'][$matour] = round($soluong, 0);    
 }
 
 // Cập nhật số lượng của giỏ hàng
-function capnhatsoluong($mahang, $soluong) {
-    if (isset($_SESSION['giohang'][$mahang])) {
-        $_SESSION['giohang'][$mahang] = round($soluong, 0);
+function capnhatsoluong($matour, $soluong) {
+    if (isset($_SESSION['giohang'][$matour])) {
+        $_SESSION['giohang'][$matour] = round($soluong, 0);
     }
 }
 
 // Xóa một sản phẩm trong giỏ hàng
-function xoamotmathang($mahang) {
-    if (isset($_SESSION['giohang'][$mahang])) {
-        unset($_SESSION['giohang'][$mahang]);
+function xoamottour($matour) {
+    if (isset($_SESSION['giohang'][$matour])) {
+        unset($_SESSION['giohang'][$matour]);
     }
 }
 
 // Hàm lấy mảng các sản phẩm trong giohang
 function laygiohang() {
-	
-    //Tạo mảng rỗng để lưu danh sách sản phẩm trong giỏ
-    $mh = array();
-    $mh_db = new MATHANG();
-    
-    //Duyệt mảng SESSION giohang và lấy từng id sản phẩm cùng số lượng
-    foreach ($_SESSION['giohang'] as $mahang => $soluong ) {
-        // Gọi hàm lấy thông tin của sản phẩm theo mã sản phẩm
-        $m = $mh_db->laymathangtheoid($mahang);
-        $dongia = $m['giaban'];
-        $solg = intval($soluong);        
-        // Tính tiền
-        $sotien = round($dongia * $soluong, 2);
 
-        // Lưu thông tin trong mảng items để hiển thị lên giỏ hàng
-        $mh[$mahang]['tenhang'] = $m['tenmathang'];
-        $mh[$mahang]['hinhanh'] = $m['hinhanh'];
-        $mh[$mahang]['giaban'] = $dongia;
-        $mh[$mahang]['soluong'] = $solg;
-        $mh[$mahang]['sotien'] = $sotien;
-    }
-    return $mh;
+	//Tạo mảng rỗng để lưu danh sách sản phẩm trong giỏ
+	$tt = array();
+	$tt_db = new TOUR();
+	
+	//Duyệt mảng SESSION giohang và lấy từng id sản phẩm cùng số lượng
+	        $tt= $tt_db->laytourtheoid($_SESSION['giohang']['matour']);
+
+	return $tt;
 }
 
 // Đếm số sản phẩm trong giỏ hàng
-function demhangtronggio() {
+function demtourtronggio() {
     return count($_SESSION['giohang']);
 }
 
@@ -70,8 +57,8 @@ function demsoluongtronggio() {
 function tinhtiengiohang () {
     $tong = 0;
     $giohang = laygiohang();
-    foreach ($giohang as $mh) {
-        $tong += $mh['giaban'] * $mh['soluong'];
+    foreach ($giohang as $tt) {
+        $tong += $tt['gia'] * $tt['soluong'];
     }
     return $tong;
 }

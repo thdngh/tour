@@ -17,19 +17,24 @@ else{
 
 $nguoidung = new NGUOIDUNG();
 $tb = "";
-
 switch($action){
-    case "macdinh":              
+    case "macdinh":   
+             
         include("main.php");
         break;
-    case "dangxuat":        
-        unset($_SESSION["nguoidung"]);                
-        $tb = "Cảm ơn!";
+		
+    case "dangxuat":
+        
+        unset($_SESSION["nguoidung"]);
+                
+        $tb = "Đã đăng xuất thành công, tạm biệt.";
         include("loginad.php");
         break;
+		
     case "dangnhap":
-        include("loginform.php");
+        include("loginad.php");
         break;
+		
     case "xldangnhap":
         $email = $_POST["txtemail"];
         $matkhau = $_POST["txtmatkhau"];
@@ -38,13 +43,11 @@ switch($action){
             include("main.php");
         }
         else{
-            $tb = "Đăng nhập không thành công!";
+            $tb = "Sai thông tin đăng nhập";
             include("loginad.php");
         }
         break;
-    case "dangky":
-        include("signin.php");
-        break;
+
     case "capnhaths":
         $mand = $_POST["txtid"];
         $email = $_POST["txtemail"];
@@ -66,29 +69,6 @@ switch($action){
             $nguoidung->doimatkhau($_POST["txtemail"],$_POST["txtmatkhaumoi"]);
         include("main.php");
         break;    
-     case "themkhachhang":
-        $hoten = $_POST["txthoten"];
-        $email = $_POST["txtemail"];
-        $dienthoai = $_POST["txtdienthoai"];
-        $matkhau = $_POST["txtmatkhau"];
-        $nlmatkhau = $_POST["txtnlmatkhau"];
-        // if($nd->kiemtranguoidunghople($email,$matkhau)){   // có thể kiểm tra thêm số đt không trùng
-        //     $tb = "Email này đã được cấp tài khoản!";
-        //     include("signin.php");
-        //     break;
-        // }
-        // else{
-            if(!$nguoidung->themnguoidung($email,$matkhau,$dienthoai,$hoten,3)){
-                $tb = "Không thêm được!";
-                include("signin.php");
-                break;
-            }
-
-            header("location:../../loginform.php");
-            break;
-          
-        // }
-
     default:
         break;
 }

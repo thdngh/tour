@@ -1,18 +1,19 @@
 <?php 
 require_once("model/database.php");
 require_once("model/danhmuc.php");
-require_once("model/tttour.php");
 require_once("model/tour.php");
+require_once("model/giohang.php");
 
 
 $dm = new DANHMUC();
-$mh = new TTTOUR();
+$tt = new TOUR();
+$tournoibat= $tt->laytournoibat();
 $danhmuc = $dm->laydanhmuc(); ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>VIETRAVEL - Nhà tổ chức du lịch chuyên nghi</title>
+  <title>VIETRAVEL - Nhà tổ chức du lịch chuyên nghiệp</title>
   <link rel="icon" type="images/jpg" href="images/vtv.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,16 +23,15 @@ $danhmuc = $dm->laydanhmuc(); ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
+html{
+	font-family:Consolas;
+}
   h3{
     text-shadow: 2px 2px 2px silver;
+	font-weight:bold;
+	font-size:30px;
   }
-  .carousel-inner img {  
-      width: 100%; /* Set width to 100% */
-      margin: auto;
-  }
-  .carousel-caption h3 {
-      color: #fff !important;
-  }
+  
   @media (max-width: 600px) {
     .carousel-caption {
       display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
@@ -46,34 +46,74 @@ $danhmuc = $dm->laydanhmuc(); ?>
       color: #777;
       text-decoration: none;
   }  
-  .panel{
-	  min-height:400px;
-  }
-  .panel-body{
-	min-height:300px;
-
-  }
+  
   .navbar-inverse {
-    background-color:#6699FF;
+    background-color:#E3F2FD;
     margin-bottom:20px;
     height: 60px;
-
+	font-size:15px;
+	border:none;
+	box-shadow: 0 0 8px 0 rgba(0,0,0,0.3);
 }
 .navbar-inverse .navbar-brand{
-    color: #f5e2c8;
+    color: #17255a;
+	font-weight:bold;
+	font-family:"Cooper Black";
+}
+.navbar-inverse .navbar-brand:hover{
+	color:#EE1537;
+}
+.navbar-inverse .navbar-nav>li>a.nav-link {
+
+
 }
 .navbar-inverse .navbar-nav>li>a {
-    color: #f5e2c8;
-    padding: 22px
+    color: #17255a;
+	font-weight:bold;
+    padding: 15px;
 }
 .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
-	color: #fff;
+	color: #D8315B;
+	
+}
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
+	background-color:#A3CEF1;
+	color:#fff;
+	border-radius:5px 5px 0 0;
+	transition: .3s ease;
+}
+.dropdown-menu>li>a{
+	font-weight:bold;
+	background-color:none;
+	color:#14281D;
+}
+.dropdown-menu>li>a:hover{
+	background-color:#A3CEF1;
+	color:#17255a;
 }
 
+
+.btn-sub{
+	padding-top:3px;
+	height:25px;
+	width:25px;
+	font-size:12px; 
+	border:solid 1px #6BA4FF;
+	border-radius:3px;
+	background-color:#6BA4FF; 
+}
+#srch{
+	width:150px;
+	height:25px;
+	border-radius:3px;
+}
   </style>
 </head>
 
 <body id="abc" data-spy="scroll" data-target=".navbar" data-offset="50" style="background-color: white;">
+
+
+
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container" style="width:1500px; margin-left:15px; margin-right:200px;">
     <div class="navbar-header">
@@ -82,15 +122,16 @@ $danhmuc = $dm->laydanhmuc(); ?>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="index.php"><span><img src="images/vtv.png" width="40px" height="40px" style="border-radius:50%;"></span>VIETRAVEL</a>
+      <a class="navbar-brand" href="index.php" style="padding:10px;"><span><img src="images/vtv.png" width="40px" height="40px" style="border-radius:50%; "></span>VIETRAVEL</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar" >
       <ul class="nav navbar-nav">
          
-        <li class="nav-item dropdown">
-          <a class="nav-link" href="#" data-toggle="dropdown"><span><img src="images/dlich.png" width="28px" height="28px"></span>
+        <li class="nav-item dropdown" >
+          <a class="nav-link"  href="#" data-toggle="dropdown"><span><img src="images/dlich.png" width="28px" height="28px"></span>
             Du Lịch
           </a>
+		 
           
           <ul class="dropdown-menu">
             <?php            
@@ -100,20 +141,8 @@ $danhmuc = $dm->laydanhmuc(); ?>
             <?php endforeach; ?>
           </ul>
         </li>
-
         <li class="nav-item dropdown">
-          <a class="nav-link" href="#" data-toggle="dropdown"><span><img src="images/mb.png" width="25px" height="25px"> </span>Vận Chuyển</a>
-          
-          <ul class="dropdown-menu">
-            <?php            
-            foreach($dmvancghuyen as $dmvc):
-            ?>
-            <li><a href="?action=xemnhom&madm=<?php echo $dmvc["id"]; ?>"><?php echo $dmvc["tendanhmuc"]; ?></a></li>
-            <?php endforeach; ?>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link" href="#" data-toggle="dropdown"><img src="images/tm.png" width="25px" height="25px"></span>
+          <a class="nav-link" href="#" data-toggle="dropdown"><img src="images/tm.png" width="25px" height="25px">
             Tin Tức
           </a>
           
@@ -128,7 +157,7 @@ $danhmuc = $dm->laydanhmuc(); ?>
     
 
         <li class="nav-item dropdown">
-          <a class="nav-link" href="#" data-toggle="dropdown"><span><img src="images/km.png" width="25px" height="25px"></span>
+          <a class="nav-link"  href="#" data-toggle="dropdown"><span><img src="images/km.png" width="25px" height="25px"></span>
             Khuyến Mãi
           </a>
           
@@ -140,14 +169,21 @@ $danhmuc = $dm->laydanhmuc(); ?>
             <?php endforeach; ?>
           </ul>
         </li>
-        <li><a href="lienhe.php"><span class="glyphicon glyphicon-phone-alt"></span> Liên hệ</a></li>
+        <li><a class="nav-link" href="?action=lienhe"><span class="glyphicon glyphicon-phone-alt"></span> Liên hệ</a></li>
+		
       <ul class="nav navbar-nav navbar-right">
     <?php 
 		if(!isset($_SESSION["khachhang"])){
 		?>
-		<li><a href="?action=dangnhap"><span class="glyphicon glyphicon-lock"></span> Đăng nhập</a></li>
-    <li><a href="admin/ktnguoidung/signin.php"><span class="	glyphicon glyphicon-edit"></span> Đăng Kí</a></li>
-    <li><a href="admin/ktnguoidung/loginad.php"><span class="glyphicon glyphicon-eye-open"></span> Admin</a></li>
+		<li class="dropdown" style="width:158px;">
+			 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+				<span class="glyphicon glyphicon-user"></span> Tài khoản <span class="caret"></span>
+			  </a>
+			  <ul class="dropdown-menu dropdown-menu-right">
+				<li><a class="dropdown-toggle" href="signup.php"><span class="glyphicon glyphicon-user"></span> Đăng ký</a></li>
+				<li><a class="dropdown-toggle" href="?action=dangnhap"><span class="glyphicon glyphicon-user"></span> Đăng nhập</a></li>
+			  </ul>	
+		</li>
 		<?php  
 		}
 		else{
@@ -159,18 +195,18 @@ $danhmuc = $dm->laydanhmuc(); ?>
 		?>
 
 
-        <li style="margin-top:18px;">
+        <li style="margin-top:13px;">
           <form class="d-flex" style="margin-left:10px;">
             <input type="hidden" name="action" value="timkiem"> 
-            <input  name="search" type="search" list="browsers" placeholder="Tìm kiếm..." aria-label="Search" style="width:150px;">
-            <button class="btn btn-outline-light btn-sm" type="submit" style="font-size:10px; border-radius:3px; "><i class="fa fa-search"></i></button>
+            <input  id="srch" name="search" type="search" list="browsers" placeholder=" Tìm kiếm..." aria-label="Search" style="">
+            <button class="btn-sub" type="submit" style=""><i class="fa fa-search" style="color:white;"></i></button>
             <datalist id="browsers">
               <option value=""></option>
               <?php 
-              require_once("model/tttour.php"); 
-              $mhs = new TTTOUR();
-              $tttours = $mhs->laytttour();
-              foreach($tttours as $rows):
+              require_once("model/tour.php"); 
+              $tts = new TOUR();
+              $tours = $tts->laytttour();
+              foreach($tours as $rows):
               ?>
               <option value="<?php echo $rows['tentour'] ?>"></option>
               <?php endforeach; ?>
@@ -178,6 +214,7 @@ $danhmuc = $dm->laydanhmuc(); ?>
         
           </form>
         </li>       
+      </ul>
       </ul>
     </div>
   </div>

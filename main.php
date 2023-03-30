@@ -1,86 +1,140 @@
 <?php include("view/top.php"); ?>
-<?php include("view/carousel.php"); ?>
 
 <style>
-	.panel-a{
-	border:1px solid #F25F5C;
-}
-.panel-a>.panel-heading {
-    color: #fff;
-    background-color: #F25F5C;
-    border-color: #F9DBBD;
-	height:70px;
-	
-}
-.panel-a>.panel-body {
-	height:293px;
-}
-#myCarousel{margin-top:30px;}
-.a{
-	height: 50px;
-  width: 50px;
-  background-color: #555;
-  border-radius: 50%;
-}
-.img:hover {
-  /* Start the shake animation and make the animation last for 0.5 seconds */
-  animation: shake 0.5s;
+h3{font-weight:bold;}
+body{font-family: consolas;}
 
-  /* When the animation is finished, start again */
-  animation-iteration-count: infinite;
-}
 
-@keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
-body {
-	font-family: Arial;
-	background-color: #EB9486;
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
-  height:100%;
+}
+.panel{
+	height:420px;
+	width:270px;
 }
 
-	</style>
-  <body>
-<br><br>
+.panel-cus{
+	border:1px solid none;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+}
+
+.panel-cus>.panel-heading {
+    color: #fff;
+    background-color: none;
+    border-color: none;
+	height:110px;
+}
+.panel-cus>.panel-heading a:hover {
+	color:#690500;
+	text-decoration:none;
+}
+.panel-cus>.panel-body {
+	min-height:240px;
+}
+
+.panel-footer{
+	background-color:transparent;
+	border:none;
+	padding:5px;
+}
+
+img.center:hover, img.img-responsive:hover{
+	opacity: 0.7;
+	transform: scale(1.1);
+	transition: .3s ease;
+}
+
+.pagination>li>a, .pagination>li>span {
+	margin:3px;
+	border-radius:50%;
+	background-color:#fff;
+	color:#17255a;
+	border:none;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	font-weight:bold;
+
+}
+.pagination>li:first-child>a, .pagination>li:first-child>span {
+	border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+.pagination>li:last-child>a, .pagination>li:last-child>span {
+	border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+.pagination>li.active>span, .pagination>li.active>span:focus, .pagination>li.active>span:hover{
+	background-color:#6BA4FF;
+	color:#fff;
+	font-weight:bold;
+}
+
+.btn{
+	border-radius:100px;margin:0 5px;
+}
+
+.btn-d{
+	font-weight:bold;
+	background-color:white;
+	border:solid 2px #1976D2;
+	color:#1976D2;	
+}
+.btn-m{
+	font-weight:bold;
+	background-color:#fff;
+	border:solid 2px #D7263D;
+	color:#D7263D;	
+}
+.btn-d:hover{
+	font-weight:bold;
+	background-color:#1976D2;
+	color:#fff;	
+}
+.btn-m:hover{
+	font-weight:bold;
+	background-color:#D7263D;
+	color:#fff;	
+}
+
+</style>
+<br>
+<br>
+
+<?php include("view/carousel.php"); ?>
+<br>
 <div class="container">  
   <div class="row"> <!-- Tất cả mặt hàng - Xử lý phân trang -->
      <a name="sptatca"></a>
-     <h3>Tất cả sản phẩm </h3>
+     <h3 align='center'>Tất cả sản phẩm </h3>
+	 <br>
     <?php
-    foreach($tttour as $mt):
+    foreach($tour as $tt):
     ?>
     <div class="col-sm-3">
-      <div class="panel panel-a text-center">
-        <div class="panel-heading">
-          <a href="?action=xemchitiet&mahang=<?php echo $mt["id"]; ?>" style="color:white;font-weight:bold;" >
-		  <?php echo $mt["tentour"]; ?></a>
+      <div class="panel panel-cus text-center">
+        <div class="panel-heading text-center" style="padding-top:15px;">
+          <a href="?action=xemchitiet&matour=<?php echo $tt["id"]; ?>" style="color:#17255a;font-weight:900;font-size:15px;" >
+		  <?php echo $tt["tentour"]; ?></a>
         </div>
-        <div class="panel-body">
-			<a href="?action=xemchitiet&mahang=<?php echo $mt["id"]; ?>">
-      <img src="<?php echo $mt["hinhanh"]; ?>" class="img" style="width:100%" alt="<?php echo $mt["tentour"]; ?>"></a><strong>Giá bán: <span  class="text-danger">
-            <?php echo number_format($mt["gia"]); ?>đ</span> </strong>   
+        <div class="panel-body center"style="height:200px;" >
+			<a href="?action=xemchitiet&matour=<?php echo $tt["id"]; ?>">
+			<img class="center" src="<?php echo $tt["hinhanh"]; ?>" class="img-responsive" style="width:230px; margin-bottom:10px; "  alt="<?php echo $tt["tentour"]; ?>"></a>
+			<strong>Giá bán: <span class="text-danger"><?php echo number_format($tt["gia"]); ?>đ</span> </strong>   
     </div>
-        <div class="panel-footer">
-        <a class="btn btn-success" href="?action=xemchitiet&mahang=<?php echo $mt["id"]; ?>"><i class="fa fa-bars" style=" font-size:15px; width:25%; height:40%;"></i>Chi tiết</a>
-          <a class="btn btn-danger" href="?action=dattour&id=<?php echo $mt["id"]; ?>"><i class="fa fa-shopping-basket" style=" font-size:13px; width:25%; height:25%;"></i>Mua Hàng</a>
+        <div class="panel-footer" >
+         
+            <a class="btn btn-d" href="?action=xemchitiet&matour=<?php echo $tt["id"]; ?>">Chi tiết</a>
+          <a class="btn btn-m" href="?action=dattour&id=<?php echo $tt["id"]; ?>&soluong=1">Đặt tour</a>
         </div>
       </div>
     </div>    
     <?php endforeach; ?>
   </div>
 
- <div class="row" align="center" class="circle"> 
+<div class="row" align="center"> 
  <ul class='pagination'>
 	<li><a href="?trang=1">
 	<span class="glyphicon glyphicon-step-backward"></span></a></li>
@@ -110,11 +164,12 @@ body {
 	<li><a href='?trang=<?php echo $tongsotrang; ?>'>
 		<span class="glyphicon glyphicon-step-forward"></span></a></li>
 	
-</ul>
+ </ul>
 </div>
-</body>
+  
   <?php include("topview.php"); ?>
   
 
 </div>
+
 <?php include("view/bottom.php"); ?>

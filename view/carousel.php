@@ -1,44 +1,52 @@
 <!--  Carousel -->
-
+<style>
+.carousel-inner img {  
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+  }
+  .carousel-caption h3 {
+      color: #fff !important;
+  }
+</style>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox" style="width: 100%">
       <div class="item active">
-        <img src="images/carousel/tour1.jpg" alt="CREAM COSMETIC">
+        <img src="images/carousel/tour1.jpg" alt="#">
         <div class="carousel-caption">
           <h3></h3>
         </div>      
       </div>
 
       <div class="item">
-        <img src="images/carousel/tour2.jpg" alt="CREAM COSMETIC">
+        <img src="images/carousel/tour7.jpg" alt="">
         <div class="carousel-caption">
-          <h3>Cam kết chính hãnh 100%</h3>
+          <h3></h3>
         </div>      
       </div>
 
       <div class="item">
-        <img src="images/carousel/121.jpg" alt="CREAM COSMETIC">
+        <img src="images/carousel/tour3.jpg" alt="">
         <div class="carousel-caption">
-          <h3>Cam kết chính hãnh 100%</h3>
+          <h3></h3>
+        </div>      
+      </div>      
+	  
+	  <div class="item">
+        <img src="images/carousel/tour6.jpg" alt="">
+        <div class="carousel-caption">
+          <h3> </h3>
         </div>      
       </div>
-
-
-      <div class="item">
-        <img src="images/carousel/113.jpg" alt="CREAM COSMETIC">
-        <div class="carousel-caption">
-          <h3>Chăm sóc - Nhiệt tình - Tận tâm </h3>
-        </div>  
-            
-      </div>
+    
     </div>
 
     <!-- Left and right controls -->

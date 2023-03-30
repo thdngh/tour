@@ -1,4 +1,3 @@
-<?php include("view/carousel.php"); ?>
 <?php include("view/top.php"); ?>
 <br><br><br>
 <div class="container">    
@@ -55,7 +54,7 @@
 				<textarea class="form-control" name="txtdiachi"></textarea>
 			</div>
 			<div class="form-group">
-				<input type="submit" value="Hoàn tất đơn hàng" class="btn btn-primary">
+				<input type="submit" value="Hoàn tất Đặt Tour" class="btn btn-primary">
 			</div>
 		</form>
 		<?php	
@@ -63,32 +62,50 @@
 		?>
 	</div>
 	<div class="col-sm-6">
-	<h4>Các mặt hàng đã chọn</h4>
+	<h4>Tour đã chọn</h4>
 		<table class="table table-bordered" style="background-color: white;">
 		<tr class="info">
-		<th>Sản phẩm</th>
+		<th>Tên Tour</th>
 		<th>Hình ảnh</th>
-		<th>Đơn giá</th>
-		<th>Số lượng</th>
+		<th>Giá Tour</th>
+		<th>Số lượng khách</th>
 		<th>Thành tiền</th>
 		</tr>
-		<?php foreach($giohang as $mahang => $mh): ?>
+		
 		<tr>
-		<td><?php echo $mh["tenhang"]; ?></td>
-		<td style="font-size:25px;" value="<?php echo $mh ["hinhanh"]; ?>">
-      <img src=" <?php echo $mh["hinhanh"]; ?>" width="90px" class="img-thumbnail"></td>
-		<td><?php echo number_format($mh["giaban"]) . "đ"; ?></td>
-		<td><?php echo $mh["soluong"]; ?></td>
-		<td><?php echo number_format($mh["sotien"]) . "đ"; ?></td>
+		<td><?php  echo $giohang["tentour"]; ?></td>
+		<td style="font-size:25px;" value="<?php echo $giohang ["hinhanh"]; ?>">
+      	<img src=" <?php echo $giohang["hinhanh"]; ?>" width="90px" class="img-thumbnail"></td>
+		<td><?php echo number_format($giohang["gia"]) . "đ"; ?><input type = "hidden" class="form-control" id="tien" name="txttien"  value ="<?php echo $giohang["gia"] ; ?>" ></td>
+		<td><input type="number" class="form-control" id="songuoi" name="txtsonguoi" value="1" onchange="TinhTien()"></td>
+		<td id = "thanhtien" onload = "TinhTien()"> </td>
 		</tr>
-		<?php endforeach; ?>
 		<tr>
-		<td colspan="4"align="top"><b>Tổng tiền</b></td>
-		<td><b><?php echo number_format(tinhtiengiohang()); ?>đ</b></td>
+		
 		</tr>
+		
 		</table>
+		<div class="form-group">
+				<a class="btn " href="">xóa</a>
+			</div>
 	</div>
   </div>
 </div>
 <br><br>
+<script>
+	document.getElementById("songuoi").onload = TinhTien();
+function TinhTien(){
+	var x = document.getElementById("songuoi").value;
+	var tien = document.getElementById("tien").value;
+	if(x >0){
+		tien = tien *x ;
+		$('#thanhtien').html(new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(tien));
+	}else{
+		$('#thanhtien').html('0 đ');
+	}
+	
+}
+</script>
+<?php include("view/carousel.php"); ?>
+
 <?php include("view/bottom.php"); ?>

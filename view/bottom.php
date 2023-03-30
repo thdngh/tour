@@ -10,6 +10,7 @@
   width: 33.33%;
   padding: 10px;
   height: 300px; /* Should be removed. Only for demonstration */
+ 
 }
 
 /* Clear floats after the columns */
@@ -84,17 +85,22 @@
 }
 body {margin:0;height:500px;}
 
+hr{
+	margin:0;
+	border:solid 1px black;
+}
+
 </style>
-<footer class="text-center" style="background-color:#4169E1;">
-  <a class="up-arrow" href="#abc" data-toggle="tooltip" title="Lên trên">
+<footer class="text-center" style="background-color:#E3F2FD; color:black;">
+  <a class="up-arrow" href="#abc" data-toggle="tooltip" title="Lên trên" style="color:#17255a">
     <span class="glyphicon glyphicon-chevron-up"></span>
-  </a><br><br>
-  <h1><a href="index.php" style="color: white;"><b>VIETRAVEL</b></a><h1>
+  </a>
+  <h1><a href="index.php" style="color:#17255a; font-family:Cooper Black;">VIETRAVEL</a><h1>
   <h3><p>Nhà tổ chức du lịch chuyên nghiệp</h3>
-  <p>Số 01 Lý Tự Trọng, P. Mỹ Long, TP. Long Xuyên, An Giang</p>  
+  <p style="margin-bottom:0px;">Số 01 Lý Tự Trọng, P. Mỹ Long, TP. Long Xuyên, An Giang</p>  
   <div class="row">
-  <div class="column" style="background-color:#4169E1;">
-    <h3 id="dt4"><img src="images/vtv.png" width="33px" height="33x" style="border-radius:50%;"></i>VIETRAVEL</h3>
+  <div class="column" style="background-color:#E3F2FD;">
+    <h3 id="dt4"><img src="images/vtv.png" width="33px" height="33x" style="border-radius:50%; font-family:Cooper Black;"></i>VIETRAVEL</h3>
     <hr>
     <p><h5 id="dt5"><b> - Tel: (84 296) 3 923 567 </b></h></p>
     <p><h5 id="dt5"> <b>- Hotline tour trong nước: 0907 19 48 91</b></h5></p>
@@ -104,33 +110,31 @@ body {margin:0;height:500px;}
       <div class="row">
         <div class="icon-bar">
           <div class="column" style="width:13%; height:10%;">
-            <a  class="facebook"><i class="fa fa-facebook"></i></a> 
+            <a class="facebook"><i class="fa fa-facebook"></i></a> 
           </div>   
           <div class="column" style="width:13%; height:10%;">
-            <a  class="google"><i class="fa fa-google"></i></a> 
+            <a class="google"><i class="fa fa-google"></i></a> 
           </div>
           <div class="column" style="width:13%; height:10%;">
-            <a  class="linkedin"><i class="fa fa-linkedin"></i></a>
+            <a class="linkedin"><i class="fa fa-linkedin"></i></a>
           </div>
           <div class="column" style="width:13%; height:10%;">
-            <a  class="youtube"><i class="fa fa-youtube"></i></a> 
+            <a class="youtube"><i class="fa fa-youtube"></i></a> 
           </div>
         </div>
       </div>
   </div>
-    <div class="column" style="background-color:#4169E1;">
-      <h2>Giờ mở cửa <span class="badge">Mới</span></h2>
+    <div class="column" style="background-color:#E3F2FD; margin-top:7px;">
+      <h3>Giờ mở cửa <span class="badge">Mới</span></h2>
       <hr>
       <p><h5><b><i class="fa fa-clock-o" style="font-size:20px;color:green; width:8%; height:10%;"></i>8h30 sáng đến 17h00 chiều</b></h></p>
       <p><h5><b><i class="fa fa-home" style='font-size:20px; color:blue; width:10%; height:10%;'></i>Trụ sở chính:190 Pasteur, P. Võ Thị Sáu, Q.3, Tp. Hồ Chí Minh, Việt Nam</b></h></p>
       <p><h5><b><i class="fa fa-home" style='font-size:20px; color:blue; width:10%; height:10%;'></i>Chi nhánh Long Xuyên: Số 01 Lý Tự Trọng, P. Mỹ Long, TP. Long Xuyên, An Giang</b></h></p>
       <p><h5><b><i class="fa fa-home" style='font-size:20px; color:blue; width:10%; height:10%;'></i>Chi nhánh Cần Thơ: 101 Trần Văn Khéo, P. Cái Khế, Q. Ninh Kiều, Tp. Cần Thơ</b></h></p>
-      <p><h5><b><i class="fa fa-home" style='font-size:20px; color:blue; width:10%; height:10%;'></i>Chi nhánh Rạch Giá: 60 Lạc Hồng, P. Vĩnh Lạc, TP. Rạch Giá</b></h></p>
-      <p><h5><b><i class="fa fa-home" style='font-size:20px; color:blue; width:10%; height:10%;'></i>Chi nhánh Phú Quốc: 53 đường 30/4, Khu phố 1, P. Dương Đông, TP. Phú Quốc</b></h></p>
       
       <p></p>
     </div>
-    <div class="column" style="background-color:#4169E1;">
+    <div class="column" style="background-color:#E3F2FD;">
     
     <h3 id="dt5" ><i class="fa fa-phone" style="font-size:35px;color:green; width:8%; height:10%;"></i>Tổng đài hỗ trợ miễn phí</h3>
     <hr>
