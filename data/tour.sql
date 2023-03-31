@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost
--- Thời gian đã tạo: Th3 29, 2023 lúc 01:41 AM
+-- Thời gian đã tạo: Th3 31, 2023 lúc 02:48 AM
 -- Phiên bản máy phục vụ: 5.7.25
 -- Phiên bản PHP: 7.1.26
 
@@ -65,7 +65,9 @@ INSERT INTO `diachi` (`id`, `nguoidung_id`, `diachi`, `macdinh`) VALUES
 (4, 8, 'Mỹ Thới', 1),
 (5, 9, 'Mỹ Xuyên', 1),
 (6, 10, 'Mỹ Long', 1),
-(7, 11, 'sss', 1);
+(7, 11, 'sss', 1),
+(8, 12, 'okok', 1),
+(9, 13, 'aaaaa', 1);
 
 -- --------------------------------------------------------
 
@@ -144,7 +146,9 @@ INSERT INTO `nguoidung` (`id`, `email`, `sodienthoai`, `matkhau`, `hoten`, `loai
 (8, 'ccc@abc.com', '1234567892', 'd893377c9d852e09874125b10a0e4f66', 'CCC', 3, 1, NULL),
 (9, 'ddd@abc.com', '1234567893', '43042f668f07adfd174cb1823d4795e1', 'DDD', 3, 1, NULL),
 (10, 'eee@abc.com', '1234567894', 'f66f4446648ae7ae56419eca43bf2b8a', 'EEE', 3, 1, NULL),
-(11, 'a@aa.com', '0123456789', '781e5e245d69b566979b86e28d23f2c7', 'Kem chiên', 3, 1, NULL);
+(11, 'a@aa.com', '0123456789', '781e5e245d69b566979b86e28d23f2c7', 'Kem chiên', 3, 1, NULL),
+(12, 'a@abc.com', '0123456789', '781e5e245d69b566979b86e28d23f2c7', 'Kem chiên', 3, 1, NULL),
+(13, 'a@abc.com', '0123456789', '781e5e245d69b566979b86e28d23f2c7', 'Kem chiên', 3, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -186,13 +190,13 @@ INSERT INTO `tour` (`id`, `tentour`, `gia`, `hinhanh`, `hinhanh2`, `hinhanh3`, `
 (16, 'Đà Nẵng - Bà Nà - Cầu Vàng - Sơn Trà - Hội An – Tặng vé vui chơi tại Công viên nước Mikazuki Đà Nẵng (Khách sạn 4* trọn tour) - Bay cùng Vietnam Airlines', 6190000, 'images/mientrung2.jpg', '', '', 1, 6, 0, ''),
 (17, 'Đà Nẵng - Huế - Đầm Lập An - La Vang - Động Thiên Đường - KDL Bà Nà - Cầu Vàng - Hội An - Đà Nẵng | Nhân dịp Ngày Hội Du Lịch', 5990000, 'images/mientrung3.jpg', '', '', 1, 6, 0, ''),
 (18, 'Đà Nẵng - Huế - Đại Nội - Đầm Lập An - KDL Bà Na - Cầu Vàng - Sơn Trà - Phố cổ Hội An - Đà Nẵng', 5790000, 'images/mientrung4.jpg', '', '', 1, 7, 0, ''),
-(19, 'Khám phá Ai Cập: Cairo - Aswan - Edfu - Kom Obo - Luxor - Trải nghiệm du thuyền 5 sao sông Nile huyền bí', 69900000, 'images/chauphi1.jpg', '', '', 2, 8, 0, ''),
-(20, 'Nam Phi: Cape Town - Sun City - Pretoria - Johannesburg | Lễ 30/4 (Giảm 2.000.000đ/khách khi thanh toán trước ngày 15/03/2023)', 79990000, 'images/chauphi2.jpg', '', '', 2, 12, 0, ''),
+(19, 'Khám phá Ai Cập: Cairo - Aswan - Edfu - Kom Obo - Luxor - Trải nghiệm du thuyền 5 sao sông Nile huyền bí', 69900000, 'images/chauphi1.jpg', '', '', 2, 9, 0, ''),
+(20, 'Nam Phi: Cape Town - Sun City - Pretoria - Johannesburg | Lễ 30/4 (Giảm 2.000.000đ/khách khi thanh toán trước ngày 15/03/2023)', 79990000, 'images/chauphi2.jpg', '', '', 2, 13, 0, ''),
 (21, 'Khám phá Hai nước Đông Dương Campuchia - Lào: Kratie - Pakse - Stung Treng', 7990000, 'images/chaua1.jpg', '', '', 2, 6, 0, ''),
 (22, 'Campuchia: Siem Reap - Phnom Penh (Khách sạn 4*)', 6590000, 'images/chaua2.jpg', '', '', 2, 6, 0, ''),
 (23, 'Hongkong : Núi Thái Bình - Thiền Viện Chí Liên - Chiêm ngưỡng toàn vịnh Victoria trên tàu Hong kong', 15900000, 'images/chaua3.jpg', '', '', 2, 6, 0, ''),
 (24, 'Thái Lan: Chiangmai – Chiangrai: Khám phá Chùa Trắng - Tam Giác Vàng - Safari Night | Nhân dịp Ngày Hội Du Lịch', 8990000, 'images/chaua4.jpg', '', '', 2, 8, 0, ''),
-(25, 'Singapore - Malaysia ( 02 đêm tại Singapore, Tặng vé tham quan Floral Fantasy Dome và Bảo tàng sáp Madame Tussauds )', 13590000, 'images/chaua5.jpg', '', '', 2, 6, 0, ''),
+(25, 'Singapore - Malaysia ( 02 đêm tại Singapore, Tặng vé tham quan Floral Fantasy Dome và Bảo tàng sáp Madame Tussauds )', 13590000, 'images/chaua5.jpg', '', '', 2, 7, 0, ''),
 (26, 'test ', 15000, 'images/anh1_637139840113905768.png', 'images/chamchim.jpg', 'images/chamchim.jpg', 1, 264, 0, 'ok');
 
 --
@@ -233,8 +237,8 @@ ALTER TABLE `donct`
 --
 ALTER TABLE `khachhang`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `khdattour_ibfk_1` (`dattour_id`),
-  ADD KEY `khtttour_ibfk_2` (`tttour_id`);
+  ADD KEY `khdattour_ibfk_1` (`don_id`),
+  ADD KEY `khtttour_ibfk_2` (`tour_id`);
 
 --
 -- Chỉ mục cho bảng `nguoidung`
@@ -263,7 +267,7 @@ ALTER TABLE `danhmuc`
 -- AUTO_INCREMENT cho bảng `diachi`
 --
 ALTER TABLE `diachi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `don`
@@ -281,13 +285,13 @@ ALTER TABLE `donct`
 -- AUTO_INCREMENT cho bảng `nguoidung`
 --
 ALTER TABLE `nguoidung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT cho bảng `tour`
 --
 ALTER TABLE `tour`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -303,8 +307,8 @@ ALTER TABLE `diachi`
 -- Các ràng buộc cho bảng `khachhang`
 --
 ALTER TABLE `khachhang`
-  ADD CONSTRAINT `khdattour_ibfk_1` FOREIGN KEY (`dattour_id`) REFERENCES `dattour` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `khtttour_ibfk_2` FOREIGN KEY (`tttour_id`) REFERENCES `tour` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `khdattour_ibfk_1` FOREIGN KEY (`don_id`) REFERENCES `dattour` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `khtttour_ibfk_2` FOREIGN KEY (`tour_id`) REFERENCES `tour` (`id`) ON UPDATE CASCADE;
 
 --
 -- Các ràng buộc cho bảng `tour`

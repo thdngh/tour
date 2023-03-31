@@ -1,5 +1,10 @@
 <?php include("../view/top.php"); ?>
-
+<style>
+.btn-a{
+	background-color:#17255a;
+	color:#fff;
+}
+</style>
 <h3>Quản lý danh mục</h3> 
 <br>
 <table class="table table-hover">
@@ -36,7 +41,7 @@
 	?>
 </table>
 <div id="buttonthem">
-<a class="btn btn-info"><span class="glyphicon glyphicon-plus"></span> Thêm danh mục</a>
+<a class="btn btn-a"><span class="glyphicon glyphicon-plus"></span> Thêm danh mục</a>
 </div>
 <br> 
 <div id="formthem">

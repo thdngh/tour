@@ -11,14 +11,49 @@
   *{
 	  font-family:"consolas";
   }
-.row.content {
+  
+
+.col-sm-3.sidenav {
+	background-color: #E3F2FD; 
 	height: 1000px;
 }
-.sidenav {
-	background-color: #E3F2FD; 
-	height: 100%;
+
+@media screen and (max-width: 767px) { 
+.row.content {height: 3000px;} 
 }
-@media screen and (max-width: 767px) { .row.content {height: auto;} }
+button, html input[type=button], input[type=submit]{
+	background-color: #669BBC;
+	color: white;
+	font-weight:bold;
+	width:30%;
+	height:50px;
+	margin:5px;
+}
+button, html input[type=button], input[type=reset]{
+	background-color: #EF233C;
+	color:white;
+	font-weight:bold;
+	width:30%;
+	height:50px;
+	margin:5px;
+}
+button, html input[type=button], input[type=submit]:hover{
+	color:#C5D86D;
+}
+button, html input[type=button], input[type=reset]:hover{
+	color:#EFF6EE;
+}
+.nav-pills>li>a{
+	font-weight:bold;
+	color:#17255a;
+}
+
+.nav-pills>li>a:hover{
+	background-color:rgba(233,59,87,0.8);
+	color:white;
+	font-weight:bold;
+}
+
   </style>
 </head>
 <body>
@@ -78,24 +113,47 @@
     <!-- Menu mh lớn - kết thúc -->
     <br>
     
-    <div class="col-sm-9" ">
+    <div class="col-sm-9">
       <div class="container-fluid">  
-        <!-- Thông tin người dùng - sẽ bổ sung ở bài thực hành sau -->          
+		
         <div class="dropdown" style="text-align: right;">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					<script>
+			function ThoiGian()
+			{
+				var d = new Date();
+				var gio=d.getHours();
+				var phut=d.getMinutes();
+				var giay=d.getSeconds();
+				
+				giay=KT(giay);
+				phut=KT(phut);
+				
+				document.getElementById("Hienthi").innerHTML='Bây giờ là '+gio+':'+phut+':'+giay;
+			}
+			
+			function KT(i)
+			{
+			  if (i < 10) 
+			  i = "0" + i;  
+			  return i;
+			}
+			
+			setInterval(ThoiGian,1000);
+		</script>	
+		
+          <a class="dropdown-toggle dropdown-toggle-right" data-toggle="dropdown" href="#">
             <span class="glyphicon glyphicon-user"></span> 
             Chào <?php if(isset($_SESSION["nguoidung"])) echo $_SESSION["nguoidung"]["hoten"]; ?>
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu dropdown-menu-right">
-            <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Thông báo</a></li>
             <li><a href="#" data-toggle="modal" data-target="#fcapnhatthongtin"><span class="glyphicon glyphicon-edit"></span> Hồ sơ cá nhân</a></li>
             <li><a href="#" data-toggle="modal" data-target="#fdoimatkhau"><span class="glyphicon glyphicon-wrench"></span> Đổi mật khẩu</a></li>
             <li class="divider"></li>
               <li><a href="../ktnguoidung/index.php?action=dangxuat"><span class="glyphicon glyphicon-log-out"></span> Thoát</a></li>
           </ul>  
-          
         </div>
+		
       </div>
       
 <!-- Form cập nhật thông tin ng dùng-->
@@ -113,26 +171,29 @@
             </div>
             <input type="hidden" name="txtid" value="<?php echo $_SESSION["nguoidung"]["id"]; ?>">
             <div class="form-group">    
-            <label>Email</label>    
-            <input class="form-control" type="email" name="txtemail" placeholder="Email" value="<?php echo $_SESSION["nguoidung"]["email"]; ?>" required>
+				<label>Email</label>    
+				<input class="form-control" type="email" name="txtemail" placeholder="Email" value="<?php echo $_SESSION["nguoidung"]["email"]; ?>" required>
             </div>
             <div class="form-group">    
-            <label>Số điện thoại</label>    
-            <input class="form-control" type="number" name="txtdienthoai" placeholder="Số điện thoại" value="<?php echo $_SESSION["nguoidung"]["sodienthoai"]; ?>" required>
+				<label>Số điện thoại</label>    
+				<input class="form-control" type="number" name="txtdienthoai" placeholder="Số điện thoại" value="<?php echo $_SESSION["nguoidung"]["sodienthoai"]; ?>" required>
             </div>            
             <div class="form-group">
-            <label>Họ tên</label>
-            <input class="form-control"  type="text" name="txthoten" placeholder="Họ tên" value="<?php echo $_SESSION["nguoidung"]["hoten"]; ?>" required></div>
+				<label>Họ tên</label>
+				<input class="form-control"  type="text" name="txthoten" placeholder="Họ tên" value="<?php echo $_SESSION["nguoidung"]["hoten"]; ?>" required>
+			</div>
             <div class="form-group">
               <label>Đổi hình đại diện</label>
               <input type="file" name="fhinh">
             </div>
             <div class="form-group">
-            <input type="hidden" name="txtid" value="<?php echo $_SESSION["nguoidung"]["id"]; ?>" >
-            <input type="hidden" name="action" value="capnhaths" >
-            <input class="btn btn-primary"  type="submit" value="Lưu">
-            <br></br>
-            <input class="btn btn-warning"  type="reset" value="Hủy"></div>
+				<input type="hidden" name="txtid" value="<?php echo $_SESSION["nguoidung"]["id"]; ?>" >
+				<input type="hidden" name="action" value="capnhaths" >
+				<div class="row" align="center">
+					<input class="btn btn-l"  type="submit" value="Lưu">
+					<input class="btn btn-h"  type="reset" value="Hủy">
+				</div>
+			</div>
           </form>
         </div>
         <div class="modal-footer">
