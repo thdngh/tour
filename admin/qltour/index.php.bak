@@ -74,20 +74,22 @@ switch($action){
         $hinhanh3 = $_POST["txthinhcu3"];
 
         // upload file mới (nếu có)
-        if($_FILES["filehinhanh"]["name"]!=""||$_FILES["filehinhanh2"]["name"]!=""||$_FILES["filehinhanh3"]["name"]!=""){
+        if($_FILES["filehinhanh"]["name"]!=""){
             // xử lý file upload -- Cần bổ dung kiểm tra: dung lượng, kiểu file, ...       
             $hinhanh = "images/" . basename($_FILES["filehinhanh"]["name"]);// đường dẫn lưu csdl
             $duongdan = "../../" . $hinhanh; // đường dẫn lưu upload file        
             move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan); 
 			
-			$hinhanh2 = "images/" . basename($_FILES["filehinhanh2"]["name"]);// đường dẫn lưu csdl
+        }
+		 if($_FILES["filehinhanh2"]["name"]!=""){
+			 $hinhanh2 = "images/" . basename($_FILES["filehinhanh2"]["name"]);// đường dẫn lưu csdl
             $duongdan = "../../" . $hinhanh2; // đường dẫn lưu upload file        
 			move_uploaded_file($_FILES["filehinhanh2"]["tmp_name"], $duongdan); 
-
-			$hinhanh3 = "images/" . basename($_FILES["filehinhanh3"]["name"]);// đường dẫn lưu csdl
-            $duongdan = "../../" . $hinhanh3; // đường dẫn lưu upload file     
+        }
+		if($_FILES["filehinhanh3"]["name"]!=""){
+			 $hinhanh2 = "images/" . basename($_FILES["filehinhanh3"]["name"]);// đường dẫn lưu csdl
+            $duongdan = "../../" . $hinhanh3; // đường dẫn lưu upload file        
 			move_uploaded_file($_FILES["filehinhanh3"]["tmp_name"], $duongdan); 
-
         }
         
         // sửa mặt hàng
