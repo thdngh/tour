@@ -97,7 +97,7 @@ hr{
   </a>
   <h1><a href="index.php" style="color:#17255a; font-family:Cooper Black;">VIETRAVEL</a><h1>
   <h3><p>Nhà tổ chức du lịch chuyên nghiệp</h3>
-  <p style="margin-bottom:0px;">Số 01 Lý Tự Trọng, P. Mỹ Long, TP. Long Xuyên, An Giang</p>  
+  <p style="margin-bottom:0px; font-weight:bold;">Số 01 Lý Tự Trọng, P. Mỹ Long, TP. Long Xuyên, An Giang</p>  
   <div class="row">
   <div class="column" style="background-color:#E3F2FD;">
     <h3 id="dt4"><img src="images/vtv.png" width="33px" height="33x" style="border-radius:50%; font-family:Cooper Black;"></i>VIETRAVEL</h3>

@@ -123,7 +123,7 @@ foreach($tour as $tt):
 				<br>
 				<div class="l-card-footer">
 					<a class="btn btn-detail" href="?action=xemchitiet&matour=<?php echo $tt["id"]; ?>" style="font-weight:bold; border-radius:50px;">Chi tiết</a> 
-					<a class="btn btn-book" href="?action=chovaogio&id=<?php echo $tt["id"]; ?>&soluong=1"  style="font-weight:bold; border-radius:50px;">Đặt tour</a>  
+					<a class="btn btn-book" href="?action=dattour&id=<?php echo $tt["id"]; ?>&soluong=1"  style="font-weight:bold; border-radius:50px;">Đặt tour</a>  
 				</div>  
 		  </div>
 		 

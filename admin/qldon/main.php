@@ -24,8 +24,8 @@ $don = $d->doctatcadon();
 		<th>Họ tên</th>
 		<th>Số điện thoại</th>
 		<th> Tên tour</th>
-        <th> Số lượng khách</th>
-        <th> Đơn giá</th>
+    <th> Số lượng khách</th>
+    <th> Đơn giá</th>
 		<th> Thành tiền</th>
      
 	</tr>

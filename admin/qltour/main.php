@@ -1,8 +1,14 @@
 <?php include("../view/top.php"); ?>
-
+<style>
+.btn-a{
+	background-color:#84A98C;
+	color:#fff;
+	font-weight:bold;
+}
+</style>
 <h3>Quản lý tour</h3> 
 <br>
-<a href="index.php?action=them" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span> Thêm tour</a>
+<a href="index.php?action=them" class="btn btn-a"><span class="glyphicon glyphicon-plus"></span> Thêm tour</a>
 <br> <br> 
 <table class="table table-hover">
 	<tr>

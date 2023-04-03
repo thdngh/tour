@@ -96,7 +96,7 @@ img.img-add{
             </div>
           </div> 
           <div class="panel-footer"><a class="btn btn-a" href="?action=xemchitiet&matour=<?php echo $tt["id"]; ?>">Chi tiết</a> 
-            <a class="btn btn-b" href="?action=chovaogio&txtmatour=<?php echo $tt["id"]; ?>&txtsoluong=1">Chọn mua</a>  
+            <a class="btn btn-b" href="?action=dattour&id=<?php echo $tt["id"]; ?>&txtsoluong=1">Đặt tour</a>  
           </div>  
         </div>
       </div>
@@ -129,7 +129,7 @@ img.img-add{
 			<form class="form-inline" method="post">
 				<input type="hidden" name="action" value="chovaogio">
 				<input type="hidden" name="id" value="<?php echo $tourct["id"]; ?>">
-				<input type="submit" class="btn btn-m" value="Đặt tour">
+				<a class="btn btn-book" href="?action=dattour&id=<?php echo $tt["id"]; ?>&soluong=1"  style="font-weight:bold; border-radius:50px;">Đặt tour</a> 
 			</form>
 		</div>
 	  </div>    

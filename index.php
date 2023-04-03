@@ -147,6 +147,7 @@ switch($action){
 		$hoten = $_POST["txthoten"];
 		$sodienthoai = $_POST["txtdienthoai"];
 		$diachi = $_POST["txtdiachi"];
+        $matour = $_REQUEST["id"];
         
 		// lưu thông tin khách nếu chưa có trong db (kiểm tra email có tồn tại chưa)
 		// xử lý thêm...
@@ -160,19 +161,19 @@ switch($action){
 		// lưu đơn hàng
 		$dh = new DON();
 		$tongtien = tinhtiengiohang();
-		$donhang_id = $dh->themdonhang($khachhang_id,$diachi_id,$tongtien);
+		$don_id = $dh->themdon($khachhang_id,$diachi_id,$tongtien);
 		
 		// lưu chi tiết đơn hàng
 		$ct = new DONCT();		
 		$giohang = laygiohang();
-		foreach($giohang as $matour => $tt){
-			$dongia = $tt["gia"];
-			$soluong = $tt["soluong"];
-			$thanhtien = $tt["sotien"];
-			$ct->themchitietdonhang($donhang_id,$matour,$dongia,$soluong,$thanhtien);
+		
+			$gia = $giohang["gia"];
+			$soluong = $_REQUEST["txtsonguoi"];
+			$thanhtien = tinhtiengiohang();
+			$ct->themchitietdon($don_id,$matour,$gia,$soluong,$thanhtien);
 			$tt = new TOUR();
-			$tt->capnhatsoluong($matour, $soluong);
-		}
+			// $tt->capnhatsoluong($matour, $soluong);
+		
 		
 		// xóa giỏ hàng
 		xoagiohang();
@@ -250,6 +251,18 @@ switch($action){
 	case "lienhe":
 		include("lienhe.php");
 		break;
+    case "gioithieu":
+        include("gioithieu.php");
+        break;
+    case "khuyenmai":
+        include("khuyenmai.php");
+        break;
+    case "xoadon":
+        if(isset($_GET["id"]))
+            $tt->xoatour($_GET["id"]);
+        $tour = $tt->laytttour();
+        include("checkout.php");
+        break;	
 	case "dangxuat":
 		unset($_SESSION["khachhang"]);
 		// chuyển về trang chủ

@@ -4,9 +4,7 @@
 * {
   box-sizing: border-box;
 }
-container{
-	font-family:"consolas ";
-}
+
 /* Header/logo Title */
 .header {
   padding: 80px;

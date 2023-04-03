@@ -1,6 +1,6 @@
 <?php include("../view/top.php"); ?>
 <div>
-<h3>Cập nhật mặt hàng</h3>
+<h3><a href="index.php" style="color:#023E8A;font-size:20px;"><span class="glyphicon glyphicon-arrow-left"></span></a> Cập nhật mặt hàng</h3>
 <form method="post" action="index.php" enctype="multipart/form-data">
 <input type="hidden" name="action" value="xulysua">
 <input type="hidden" name="txtid" value="<?php echo $t["id"]; ?>">
@@ -18,7 +18,7 @@
 </div> 
 <div class="form-group">    
 	<label>Lịch trình</label>    
-	<textarea class="form-control" name="txtlichtrinh" required><?php echo $t["lichtrinh"]; ?></textarea>
+	<textarea class="form-control" name="txtlichtrinh" ><?php echo $t["lichtrinh"]; ?></textarea>
 </div> 
 <div class="form-group">    
 	<label>Giá</label>    
@@ -70,8 +70,8 @@
 <br>
 
 <div class="form-group">
-	<input class="btn btn-primary"  type="submit" value="Lưu">
-	<input class="btn btn-warning"  type="reset" value="Hủy">
+	<input class="btn btn-primary" type="submit" value="Lưu" style="" >
+	<input class="btn btn-warning" type="reset" value="Hủy" style="" >
 </div>
 </form>
 </div>

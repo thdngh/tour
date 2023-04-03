@@ -124,7 +124,7 @@ hr{
         </div>
       </div>
   </div>
-    <div class="column" style="background-color:#E3F2FD; margin-top:6px;">
+    <div class="column" style="background-color:#E3F2FD; margin-top:7px;">
       <h3>Giờ mở cửa <span class="badge">Mới</span></h2>
       <hr>
       <p><h5><b><i class="fa fa-clock-o" style="font-size:20px;color:green; width:8%; height:10%;"></i>8h30 sáng đến 17h00 chiều</b></h></p>

@@ -32,7 +32,7 @@ function laygiohang() {
 	$tt_db = new TOUR();
 	
 	//Duyệt mảng SESSION giohang và lấy từng id sản phẩm cùng số lượng
-	        $tt= $tt_db->laytourtheoid($_SESSION['giohang']['matour']);
+	$tt= $tt_db->laytourtheoid($_SESSION['giohang']['matour']);
 
 	return $tt;
 }
@@ -55,12 +55,14 @@ function demsoluongtronggio() {
 
 // Tính tổng thành tiền trong giỏ hàng
 function tinhtiengiohang () {
-    $tong = 0;
+    $tongtien = 0;
+    $soluong = $_REQUEST['txtsonguoi'];
     $giohang = laygiohang();
-    foreach ($giohang as $tt) {
-        $tong += $tt['gia'] * $tt['songuoi'];
-    }
-    return $tong;
+   
+       
+        $tongtien +=  $giohang['gia'] * (int)$soluong;
+    
+    return $tongtien;
 }
 
 // Xóa tất cả giỏ hàng

@@ -56,7 +56,7 @@
 			<div class="form-group">
 				<input type="submit" value="Hoàn tất Đặt Tour" class="btn btn-primary">
 			</div>
-		</form>
+		
 		<?php	
 		}
 		?>
@@ -70,24 +70,22 @@
 		<th>Giá Tour</th>
 		<th>Số lượng khách</th>
 		<th>Thành tiền</th>
+		<th> Xóa </th>
 		</tr>
 		
 		<tr>
 		<td><?php  echo $giohang["tentour"]; ?></td>
 		<td style="font-size:25px;" value="<?php echo $giohang ["hinhanh"]; ?>">
-      	<img src=" <?php echo $giohang["hinhanh"]; ?>" width="90px" class="img-thumbnail"></td>
+      	<img src=" <?php echo $giohang["hinhanh"]; ?>" width="200px" class="img-thumbnail"></td>
 		<td><?php echo number_format($giohang["gia"]) . "đ"; ?><input type = "hidden" class="form-control" id="tien" name="txttien"  value ="<?php echo $giohang["gia"] ; ?>" ></td>
 		<td><input type="number" class="form-control" id="songuoi" name="txtsonguoi" value="1" onchange="TinhTien()"></td>
 		<td id = "thanhtien" onload = "TinhTien()"> </td>
+		<td><a class="btn btn-danger" href="?action=xoadon&id="><span class="glyphicon glyphicon-trash"></span></a></td>
 		</tr>
 		<tr>
-		
 		</tr>
-		
 		</table>
-		<div class="form-group">
-				<a class="btn " href="">xóa</a>
-			</div>
+		</form>
 	</div>
   </div>
 </div>
