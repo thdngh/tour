@@ -14,12 +14,14 @@
 	color:white;
 	height:940px;
 }
-.h3
+.h3{
+	
+}
 </style>
 <body>
 <div class="mb">
 <div>
-	<h3><b>Trang Admin - Vietravel</b></h3>
+	<h3><b">Trang Admin - Vietravel</b></h3>
 	<li class="nav-item n2"  type="none">
 		
 	</li>
