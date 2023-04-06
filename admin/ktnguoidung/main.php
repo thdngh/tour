@@ -7,27 +7,26 @@
 <link rel="stylesheet" href="../../css/style.css">
 </head>
 <style>
-.mb{
-	background-image:url("../../images/bg/groove.jpg");
-	background-repeat:no-repeat;
-	background-size:cover;
-	color:white;
-	height:940px;
+
+#myVideo {
+  opacity:0.8;
+  position: fixed;
+  top:90px;
+  left:264px;
+  width: 90%; 
+  height:90%;
 }
-.h3{
-	
-}
+
+
 </style>
 <body>
-<div class="mb">
-<div>
-	<h3><b>Trang Admin - Vietravel</b></h3>
-	<li class="nav-item n2"  type="none">
-		
-	</li>
+<video autoplay muted loop id="myVideo">
+  <source src="../../images/bg/ps3.mp4" type="video/mp4">
+</video>
+	<div class="">
+		<h3><b>Trang Admin - Vietravel</b></h3>
+		<li class="nav-item n2"  type="none"></li>
+	</div>
 
-
-</div>
-</div>
 </body>
 <?php include("../view/bottom.php"); ?>

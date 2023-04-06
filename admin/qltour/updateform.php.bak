@@ -44,14 +44,14 @@
 	<div id="hinh2" class="col-sm-3">
 		<label>Hình ảnh 2</label><br>
 		<input type="hidden" name="txthinhcu2" value="<?php echo $t["hinhanh2"]; ?>">
-			<img src="../../<?php echo $t["hinhanh2"]; ?>" height="50"><br>
+			<img src="../../<?php echo $t["hinhanh2"]; ?>" width="50"><br>
 		<input type="checkbox" id="chkdoianh2" name="chkdoianh" value="1"> Đổi ảnh<br>
 	</div>  
 	
 	<div id="hinh3" class="col-sm-3">
 		<label>Hình ảnh 3</label><br>
 		<input type="hidden" name="txthinhcu3" value="<?php echo $t["hinhanh3"]; ?>">
-			<img src="../../<?php echo $t["hinhanh3"]; ?>" height="50"><br>
+			<img src="../../<?php echo $t["hinhanh3"]; ?>" width="50"><br>
 		<input type="checkbox" id="chkdoianh3" name="chkdoianh" value="1"> Đổi ảnh<br>
 	</div>  
 </div>  

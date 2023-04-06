@@ -29,7 +29,7 @@
 		<td><img src="../../<?php echo $tt["hinhanh"]; ?>" width="80px" class="img-thumbnail"></td>
 		<td width="280px"><?php echo $tt["tentour"]; ?></td>
 		<td><?php echo $tt["gia"]; ?></td>
-		<td width="180px"><?php echo $tt["lichtrinh"]; ?></td>
+		<td width="180"><?php echo $tt["lichtrinh"]; ?></td>
 		<td><?php echo $tt["luotxem"]; ?></td>
 		<td><?php echo $tt["luotdat"]; ?></td>
 		<td><img src="../../<?php echo $tt["hinhanh2"]; ?>" width="80" class="img-thumbnail"><img src="../../<?php echo $tt["hinhanh3"]; ?>" width="80" class="img-thumbnail"></td>

@@ -16,6 +16,14 @@
 .col-sm-3.sidenav {
 	background-color: #E3F2FD; 
 	height: 1000px;
+	width:315px;
+	position:fixed;
+	top:0;
+	left:0;
+	box-shadow: 1px 3px 5px 1px silver;
+}
+.col-sm-9 {
+	margin-left:316px;
 }
 
 @media screen and (max-width: 767px) { 
@@ -54,6 +62,10 @@ button, html input[type=button], input[type=reset]:hover{
 	font-weight:bold;
 }
 
+#Hienthi:hover{
+	color:black;
+	text-decoration:none;
+}
   </style>
 </head>
 <body>
@@ -114,46 +126,28 @@ button, html input[type=button], input[type=reset]:hover{
     <br>
     
     <div class="col-sm-9">
-      <div class="container-fluid">  
+      <div class="container-fluid" style="padding-left:0;">  
 		
-        <div class="dropdown" style="text-align: right;">
-					<script>
-			function ThoiGian()
-			{
-				var d = new Date();
-				var gio=d.getHours();
-				var phut=d.getMinutes();
-				var giay=d.getSeconds();
-				
-				giay=KT(giay);
-				phut=KT(phut);
-				
-				document.getElementById("Hienthi").innerHTML='Bây giờ là '+gio+':'+phut+':'+giay;
-			}
-			
-			function KT(i)
-			{
-			  if (i < 10) 
-			  i = "0" + i;  
-			  return i;
-			}
-			
-			setInterval(ThoiGian,1000);
-		</script>	
-		
-          <a class="dropdown-toggle dropdown-toggle-right" data-toggle="dropdown" href="#">
-            <span class="glyphicon glyphicon-user"></span> 
-            Chào <?php if(isset($_SESSION["nguoidung"])) echo $_SESSION["nguoidung"]["hoten"]; ?>
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-right">
-            <li><a href="#" data-toggle="modal" data-target="#fcapnhatthongtin"><span class="glyphicon glyphicon-edit"></span> Hồ sơ cá nhân</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#fdoimatkhau"><span class="glyphicon glyphicon-wrench"></span> Đổi mật khẩu</a></li>
-            <li class="divider"></li>
-              <li><a href="../ktnguoidung/index.php?action=dangxuat"><span class="glyphicon glyphicon-log-out"></span> Thoát</a></li>
-          </ul>  
-        </div>
-		
+		<div class="col-sm-4" style="padding-left:0;">
+			<span class="glyphicon glyphicon-calendar"></span>
+			<a id="Hienthi" style="color:black;" align="left"></a>
+		</div>
+
+        <div class="col-sm-8" >
+			<div class="dropdown" style="text-align: right;">
+			  <a class="dropdown-toggle dropdown-toggle-right" data-toggle="dropdown" href="#" style="font-weight:bold;">
+				<span class="glyphicon glyphicon-user"></span> 
+					Chào <?php if(isset($_SESSION["nguoidung"])) echo $_SESSION["nguoidung"]["hoten"]; ?>
+				<span class="caret"></span>
+			  </a>
+			  <ul class="dropdown-menu dropdown-menu-right">
+				<li><a href="#" data-toggle="modal" data-target="#fcapnhatthongtin"><span class="glyphicon glyphicon-edit"></span> Hồ sơ cá nhân</a></li>
+				<li><a href="#" data-toggle="modal" data-target="#fdoimatkhau"><span class="glyphicon glyphicon-wrench"></span> Đổi mật khẩu</a></li>
+				<li class="divider"></li>
+				  <li><a href="../ktnguoidung/index.php?action=dangxuat"><span class="glyphicon glyphicon-log-out"></span> Thoát</a></li>
+			  </ul>  
+			</div>
+		</div>
       </div>
       
 <!-- Form cập nhật thông tin ng dùng-->
@@ -235,3 +229,33 @@ button, html input[type=button], input[type=reset]:hover{
   </div>
      
     
+<script>
+	function ThoiGian()
+	{
+		const tuan = ["Chủ nhật","Hai","Ba","Tư","Năm","Sáu","Bảy"];
+		var d = new Date();
+		var gio=d.getHours();
+		gio = ("0" + gio).slice(-2);
+		var phut=d.getMinutes();
+		var giay=d.getSeconds();
+		var ngay=d.getDate();
+		var thang=d.getMonth()+1;
+		var nam=d.getFullYear();
+		let thu=tuan[d.getDay()];
+		
+		
+		giay=KT(giay);
+		phut=KT(phut);
+		
+		document.getElementById("Hienthi").innerHTML='Thứ '+thu+', '+ngay+'/'+thang+'/'+nam+', '+gio+':'+phut;
+	}
+	
+	function KT(i)
+	{
+	  if (i < 10) 
+	  i = "0" + i;  
+	  return i;
+	}
+	
+	setInterval(ThoiGian,0);
+</script>
